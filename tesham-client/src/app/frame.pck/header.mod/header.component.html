@@ -1,0 +1,31 @@
+<section class="te-main-header">
+  <div class="container nav-wrapper">
+    <div class="row">
+      <div class="col s12 m12 l4">
+        <a href="#" class="brand-logo"><img src="../../../assets/images/logo.jpg"></a>
+      </div>
+      <div class="col s12 m12 l8">
+        <ul id="nav-mobile" class="right hide-on-med-and-down te-button-menu">
+          <ng-container *ngFor="let nav of listItem.data">
+            <li>
+            <span>
+              <span>
+              <a><span>{{nav.NavText}}</span></a>
+            </span>
+
+              <ul *ngIf="nav.SubResources" class="te-dropDown-menu">
+          <ng-container *ngFor="let subNav of nav.SubResources">
+            <li>
+           <a><span>{{subNav.NavText}}</span></a>
+            </li>
+
+          </ng-container>
+        </ul>
+
+        </span></li>
+        </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
