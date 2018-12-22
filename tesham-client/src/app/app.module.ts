@@ -1,18 +1,18 @@
+// Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+// App
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './frame.pck/header.mod/header.component';
-import { PipeTranslatePipe } from './utility.pck/pipes/pipe-translate.pipe';
+import { FrameModule } from './frame.pck/frame.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    PipeTranslatePipe
+    AppComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FrameModule
   ],
   providers: [],
   bootstrap: [AppComponent]

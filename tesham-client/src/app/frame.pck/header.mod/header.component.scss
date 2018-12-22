@@ -1,4 +1,4 @@
-@import "../../../assets/util-scss/variables.scss";
+@import "../../../assets/util-scss/colors";
 
 
 
@@ -14,6 +14,7 @@
 
   & .nav-wrapper {
     & .row {
+      margin: 0;
       & .col:last-child {
         & ul.te-button-menu > li{
           float: left;
