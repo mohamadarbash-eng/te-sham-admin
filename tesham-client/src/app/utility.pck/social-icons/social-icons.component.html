@@ -1,0 +1,8 @@
+<div class="te-social-icon-container">
+<ng-container *ngFor="let icon of socialIconsData">
+  <a [href]="icon.socialLink" target="_blank" class="te-social-icon">
+    <img [src]="'../../../assets/svg/'+ icon.socialName +'.svg'" [alt]="icon.socialName">
+  </a>
+</ng-container>
+</div>
+

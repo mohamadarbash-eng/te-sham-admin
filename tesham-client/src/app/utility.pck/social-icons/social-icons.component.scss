@@ -1,0 +1,22 @@
+.te-social-icon-container {
+  display: inline-block;
+}
+
+.te-social-icon {
+  border: 2px solid #4d634d;
+  border-radius: 50%;
+  height: 40px;
+  line-height: 45px;
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+  margin: 5px 4px 0;
+  float: left;
+  cursor: pointer;
+
+
+  & img {
+    height: 20px;
+    width: 20px;
+  }
+}
