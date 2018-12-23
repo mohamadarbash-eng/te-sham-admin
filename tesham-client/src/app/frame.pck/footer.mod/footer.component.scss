@@ -5,9 +5,6 @@
   position: relative;
   & .row {
     margin: 0;
-    & .col:last-child {
-      text-align: right;
-    }
   }
 }
 
@@ -30,12 +27,3 @@
   width: 90%;
 }
 
-@media only screen and (max-width: 993px) {
-  .te-main-footer {
-    & .row {
-      & .col:last-child {
-        text-align: center;
-      }
-    }
-  }
-}
