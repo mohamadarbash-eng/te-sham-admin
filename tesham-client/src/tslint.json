@@ -12,6 +12,7 @@
       "element",
       "te-app",
       "kebab-case"
-    ]
+    ],
+  "import-spacing": false
   }
 }
