@@ -12,9 +12,12 @@
         </div>
         <div class="col l4 m4 s12">
           <te-app-social-icons [socialIconsData]="[
-          {socialLink: 'https://angular.io/guide/http', socialName: 'facebook'},
-          {socialLink: 'https://angular.io/guide/http', socialName: 'twitter'},
-          {socialLink: 'https://angular.io/guide/http', socialName: 'youtube'}]">
+          {socialLink: 'https://angular.io/guide/http', socialName: 'facebook', isTooltips: false,
+           tooltipText: 'تابع صفحتنا على الفيس للمزيد من الأخبار'},
+          {socialLink: 'https://angular.io/guide/http', socialName: 'twitter', isTooltips: true,
+          tooltipText: 'تابعنا على اليوتيوب  للمزيد من الأخبار'},
+          {socialLink: 'https://angular.io/guide/http', socialName: 'youtube', isTooltips: true,
+          tooltipText: 'تابع صفحتنا على توتير للمزيد من الأخبار'}]">
           </te-app-social-icons>
         </div>
       </div>

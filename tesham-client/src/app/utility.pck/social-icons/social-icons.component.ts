@@ -8,4 +8,7 @@ import { SocialIconsInterfaces }    from './social-icons-interfaces';
 })
 export class SocialIconsComponent {
   @Input() socialIconsData: Array<SocialIconsInterfaces>;
+  @Input() isTooltips = false;
+  @Input() tooltipsText: string;
+  @Input() tooltipsPosition: string;
 }

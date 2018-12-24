@@ -5,12 +5,11 @@ import { PipeTranslatePipe } from './pipes/pipe-translate.pipe';
 import { AppVersionComponent } from './app-version/app-version.component';
 import { SocialIconsComponent } from './social-icons/social-icons.component';
 
-
 @NgModule({
   declarations: [
     PipeTranslatePipe,
     AppVersionComponent,
-    SocialIconsComponent,
+    SocialIconsComponent
   ],
   exports: [
     PipeTranslatePipe,
