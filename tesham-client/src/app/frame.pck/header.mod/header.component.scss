@@ -10,6 +10,7 @@
   position: relative;
   background-color: white;
   border-top: 2px solid $main-color;
+  border-bottom: 1px solid $main-color;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3), 0 6px 15px 0 rgba(0, 0, 0, 0.019);
 
   & .nav-wrapper {

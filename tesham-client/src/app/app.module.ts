@@ -1,9 +1,10 @@
 // Angular
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule }        from '@angular/platform-browser';
+import { NgModule }             from '@angular/core';
 // App
-import { AppComponent } from './app.component';
-import { FrameModule } from './frame.pck/frame.module';
+import { AppComponent }         from './app.component';
+import { FrameModule }          from './frame.pck/frame.module';
+import { NgxAgileSliderModule } from './carousel/ngx-agile-slider.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FrameModule } from './frame.pck/frame.module';
   ],
   imports: [
     BrowserModule,
-    FrameModule
+    FrameModule,
+    NgxAgileSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

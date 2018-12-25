@@ -1,0 +1,33 @@
+<div #sliderContainer
+     class="ngx-agile-slider-container"
+     [attr.id]="containerId"
+     (swipeleft)="onSwipe($event.type)"
+     (swiperight)="onSwipe($event.type)">
+
+  <div #sliderFrame class="ngx-agile-slider-frame" [ngClass]="{'ngx-agile-slider-touch-frame': touchCursor}">
+    <ul #sliderList class="ngx-agile-slider-slides">
+      <ng-content></ng-content>
+    </ul>
+  </div>
+<div class="container ngx-agile-slider-nav">
+  <div class="left">
+    <a  (click)="onClickPrev()" *ngIf="sliderActive">
+      <i class="material-icons medium">keyboard_arrow_left</i>
+    </a>
+
+  </div>
+  <div class="right">
+    <a class="ngx-agile-slider-next" (click)="onClickNext()" *ngIf="sliderActive">
+      <i class="material-icons medium">keyboard_arrow_right</i>
+    </a>
+
+  </div>
+</div>
+  <ul class="ngx-agile-slider-dots" *ngIf="navigation">
+    <li class="ngx-agile-slider-nav-dots"
+        [class.active]="item.active"
+        *ngFor="let item of navigationItems; let idx = index"
+        (click)="onClickNavigationItem(idx)"
+    ></li>
+  </ul>
+</div>
