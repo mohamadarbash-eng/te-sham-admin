@@ -1,22 +1,5 @@
-<te-app-header></te-app-header>
-<section>
-  <te-app-ngx-agile-slider-container [sliderOptions]="{ loop: true, lazyLoading: false }">
-    <te-app-ngx-agile-slider-item>
-      <div>
-        <div>
-          <img src="assets/test-1.jpg"/>
-        </div>
-      </div>
-    </te-app-ngx-agile-slider-item>
-    <te-app-ngx-agile-slider-item>
-      <img src="assets/test-2.jpg"/>
-    </te-app-ngx-agile-slider-item>
-    <te-app-ngx-agile-slider-item>
-      <img src="assets/test-3.jpg"/>
-    </te-app-ngx-agile-slider-item>
-    <te-app-ngx-agile-slider-item>
-      <img src="assets/test-4.jpg"/>
-    </te-app-ngx-agile-slider-item>
-  </te-app-ngx-agile-slider-container>
-</section>
-<te-app-footer></te-app-footer>
+<div class="main-container">
+  <te-app-header></te-app-header>
+    <router-outlet></router-outlet>
+  <te-app-footer></te-app-footer>
+</div>

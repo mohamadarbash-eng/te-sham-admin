@@ -1,0 +1,29 @@
+<div class="course-widget-container">
+  <div class="container">
+    <div class="row center"><h5><span class="te-title">Te-Sham Academy Courses</span></h5></div>
+    <div class="row">
+      <ng-container *ngFor="let course of coursesData; let _last = last;">
+        <div class="col l4 m6 s12 course-widget" [ngClass]="{'hide-on-med-and-down': !!_last}">
+          <div class="card">
+            <div class="card-image">
+              <img  [src]="'assets/images/' + course.imageUrl" [alt]="course.imageAlt">
+              <a class="btn-floating halfway-fab waves-effect waves-light light-green"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <span class="card-title">{{course.title}}</span>
+              <p class="course-widget-category"># {{course.category}}</p>
+                <p class="course-widget-description">{{course.shortDescription}}...</p>
+              <div class="course-widget-footer">
+                <div class="row">
+                  <div class="left"><i class="material-icons tiny">star</i> <span>{{course.rating}}</span></div>
+                  <div class="right">Price: {{course.price}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="row center"><a class="btn light-green">View ALL COURSES</a></div>
+  </div>
+</div>

@@ -4,17 +4,22 @@ import { NgModule }             from '@angular/core';
 // App
 import { AppComponent }         from './app.component';
 import { FrameModule }          from './frame.pck/frame.module';
-import { NgxAgileSliderModule } from './carousel/ngx-agile-slider.module';
+import { frameRoutes }          from './frame.pck/frame.router';
+import { RouterModule }         from '@angular/router';
+import { appRoutes }            from './app-router';
+
 
 @NgModule({
   declarations: [
     AppComponent
-
   ],
   imports: [
     BrowserModule,
     FrameModule,
-    NgxAgileSliderModule
+    RouterModule.forRoot([
+      ...appRoutes,
+      ...frameRoutes
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

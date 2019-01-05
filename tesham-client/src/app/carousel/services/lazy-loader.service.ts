@@ -13,9 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class LazyLoaderService {
 
   /**
-   * Cache for loaded images
-   * @type {{}}
-   * @private
+   *
    */
   private _cache: any = {};
 
