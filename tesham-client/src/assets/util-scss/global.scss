@@ -67,3 +67,23 @@
       padding-bottom: 5px
     }
 }
+.te-button-link {
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: $light-green;
+  cursor: pointer;
+  &.te-underline{
+    text-decoration: underline;
+  }
+}
+
+.te-widget-separator {
+  width: 100%;
+  max-width: 80%;
+  position: relative;
+  border-bottom: 1px solid $main-color;
+  opacity: 0.4;
+  margin: 30px auto 20px auto;
+}
+

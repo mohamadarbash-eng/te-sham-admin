@@ -1,0 +1,7 @@
+<p>
+  {{getText}}
+  <a *ngIf="!routerLink; else link" (click)="onClickReadButton()" class="te-button-link te-underline">{{readMoreSwitch ? 'Read More >>': '<< Read Less'}}</a>
+  <ng-template #link>
+    <a class="te-button-link te-underline" [routerLink]="routerLink">Read More >></a>
+  </ng-template>
+</p>

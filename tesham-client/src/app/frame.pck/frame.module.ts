@@ -8,6 +8,7 @@ import { UtilityModule }        from '../utility.pck/utility.module';
 import { IndexComponent }       from './index.mod/index.component';
 import { NgxAgileSliderModule } from '../carousel/ngx-agile-slider.module';
 import { WidgetsModule }        from '../widgets.pck/widgets.module';
+import { RouterModule }         from '@angular/router';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { WidgetsModule }        from '../widgets.pck/widgets.module';
   imports: [
     CommonModule,
     UtilityModule,
+    RouterModule,
     NgxAgileSliderModule,
     WidgetsModule
   ],

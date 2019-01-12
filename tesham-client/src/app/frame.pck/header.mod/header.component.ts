@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { routes }            from '../../routes-model';
+
 
 const listItem = {
   data: [
@@ -29,7 +31,7 @@ const listItem = {
 })
 
 export class HeaderComponent implements OnInit {
-
+  public  _routes = routes;
   public listItem = listItem;
 
   constructor() {

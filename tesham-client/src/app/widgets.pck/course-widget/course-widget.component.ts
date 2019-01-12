@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CourseDataInterface }      from './CourseDataInterface.interface';
+import { CourseDataInterface }      from '../CourseDataInterface.interface';
 
 @Component({
   selector: 'te-app-course-widget',
