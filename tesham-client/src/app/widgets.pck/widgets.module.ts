@@ -5,16 +5,24 @@ import { CourseWidgetComponent } from './course-widget/course-widget.component';
 import { FormsModule }           from '@angular/forms';
 import { UtilityModule }         from '../utility.pck/utility.module';
 import { CourseCardComponent } from './course-card/course-card.component';
+import { WhyWeWidgetComponent } from './why-we-widget/why-we-widget.component';
+import { UpcomingEventComponent } from './upcoming-event/upcoming-event.component';
+import { EventWidgetComponent } from './event-widget/event-widget.component';
 // App
 
 
 @NgModule({
   declarations: [
     CourseWidgetComponent,
-    CourseCardComponent
+    CourseCardComponent,
+    WhyWeWidgetComponent,
+    UpcomingEventComponent,
+    EventWidgetComponent
   ],
   exports: [
-    CourseWidgetComponent
+    CourseWidgetComponent,
+    WhyWeWidgetComponent,
+    EventWidgetComponent
   ],
   imports: [
     CommonModule,

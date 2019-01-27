@@ -1,13 +1,7 @@
-@import "../../../assets/util-scss/colors";
 @import "../../../assets/util-scss/global.scss";
 
 .course-widget-container {
   & .container {
     width: 90%;
-  }
-
-  & .te-title {
-    border-bottom: 2px solid $light-green;
-    padding-bottom: 5px;
   }
 }
