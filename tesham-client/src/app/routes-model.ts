@@ -1,3 +1,4 @@
 export const routes = {
-  homepage: 'home'
+  homepage: 'home',
+  courses: 'courses'
 }

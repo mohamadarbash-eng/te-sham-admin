@@ -1,0 +1,88 @@
+@import "../../../../assets/util-scss/colors";
+
+
+.te-upcoming-event-container {
+  a {
+    color: $secondary-color;
+
+  }
+
+  .te-event-body {
+    display: flex !important;
+    flex-direction: row;
+
+    .te-event-description {
+      padding-left: 15px;
+      .te-event-info {
+        div {
+          opacity: 0.5;
+          display: inline-block;
+          font-size: 14px;
+          &:nth-of-type(2) {
+            padding-left: 10px;
+          }
+        }
+        span {
+          padding-left: 2px;
+        }
+        i {
+          vertical-align: bottom;
+        }
+      }
+
+      .te-event-text {
+
+      }
+    }
+    .te-event-title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .te-event-time {
+      box-shadow: 0 3px 0 rgba(29, 34, 47, 1.5);
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 80px;
+      height: 60px;
+      background-color: $main-color;
+      transition: all .7s ease-in-out;
+
+      & span {
+        display: block;
+        font-weight: 700;
+        line-height: 0.75;
+        color: $light-green;
+      }
+
+      .te-event-month {
+        font-size: 14px;
+        margin-top: 9px;
+      }
+
+      .te-event-day {
+        font-size: 24px;
+      }
+    }
+    .te-event-time:hover {
+      background-color: $light-green;
+        & span {
+          color: $main-color;
+      }
+    }
+
+  }
+
+  .te-upcoming-event-image {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+
+    & img {
+      max-width: 100%;
+    }
+  }
+}

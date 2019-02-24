@@ -1,0 +1,89 @@
+@import "../../../../assets/util-scss/colors";
+
+
+.te-main-header {
+  display: block;
+  position: relative;
+  background-color: white;
+  border-top: 2px solid $main-color;
+  border-bottom: 1px solid $main-color;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3), 0 6px 15px 0 rgba(0, 0, 0, 0.019);
+
+  & .nav-wrapper {
+    & .row {
+      margin: 0;
+      & .col:last-child {
+        & ul.te-button-menu > li{
+          float: left;
+          > span {
+            display: inline-block;
+            position: relative;
+            &:hover {
+              .te-dropDown-menu {
+                z-index: 1;
+                display: block;
+                opacity: 1;
+                border: 0.5px solid $secondary-color
+              }
+            }
+          }
+          & a {
+            cursor: pointer;
+            display: block;
+            color: $main-color !important;
+            font-size: 16px;
+            position: relative;
+            text-transform: uppercase;
+            padding: 18px 20px;
+            &:hover > span {
+              border-bottom: 2px solid $secondary-color;
+              padding-bottom: 5px
+            }
+          }
+          & .te-dropDown-menu {
+            width: 135px;
+            position: absolute;
+            top: 59px;
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            background-color: $white-color;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),
+            0 1px 5px 0 rgba(0,0,0,.12),
+            0 3px 1px -2px rgba(0,0,0,.2);
+            & li {
+              & a{
+                cursor: pointer;
+                display: block;
+                padding: 10px 0 10px 5px!important;
+                color: $main-color !important;
+                font-size: 16px;
+                position: relative;
+                text-transform: none;
+              }
+            }
+          }
+        }
+        }
+      }
+    }
+  }
+
+.te-button-menu {
+  margin: 0;
+  position: relative;
+}
+
+.nav-wrapper {
+  background-color: white;
+}
+
+.brand-logo {
+  & img {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 0;
+    width: 60px;
+  }
+}

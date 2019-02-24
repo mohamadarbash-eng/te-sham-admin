@@ -1,13 +1,15 @@
 // Angular
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule }      from '@angular/core';
-import { RouterModule }  from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 // App
-import { AppComponent }  from './app.component';
-import { FrameModule }   from './frame.pck/frame.module';
-import { frameRoutes }   from './frame.pck/frame.router';
-import { appRoutes }     from './app-router';
-import { UtilityModule } from './utility.pck/utility.module';
+import { AppComponent } from './app.component';
+import { FrameModule } from './main.mod/frame.module';
+import { frameRoutes } from './main.mod/frame.router';
+import { appRoutes } from './app-router';
+import { UtilityModule } from './utility.mod/utility.module';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { UtilityModule } from './utility.pck/utility.module';
     BrowserModule,
     FrameModule,
     UtilityModule,
+    HttpClientModule,
+    StoreModule.forRoot({}),
     RouterModule.forRoot([
       ...appRoutes,
       ...frameRoutes
@@ -26,4 +30,5 @@ import { UtilityModule } from './utility.pck/utility.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

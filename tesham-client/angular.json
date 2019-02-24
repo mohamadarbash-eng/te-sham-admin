@@ -25,8 +25,14 @@
             "styles": [
               "./node_modules/material-design-icons/iconfont/material-icons.css",
               "./node_modules/materialize-css/dist/css/materialize.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/util-scss/root.scss"
            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "../src/assets/util-scss/"
+              ]
+            },
             "scripts": [
               "./node_modules/materialize-css/dist/js/materialize.js"
             ]

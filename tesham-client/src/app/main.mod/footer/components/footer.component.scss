@@ -1,0 +1,30 @@
+@import "../../../../assets/util-scss/colors";
+
+.te-main-footer {
+  background-color: $white-color;
+  position: absolute;
+  width: 100%;
+  & .row {
+    margin: 0;
+  }
+}
+
+.te-footer-bottom {
+  background-color: $main-color;
+  padding: 20px 0;
+}
+
+.te-copy-right {
+  margin: 0;
+  color: $gray-green-color;
+}
+
+.te-footer-top {
+  background-color: $white-color;
+
+}
+
+.container {
+  width: 90%;
+}
+

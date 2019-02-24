@@ -1,0 +1,35 @@
+// Angular
+import { NgModule }              from '@angular/core';
+import { CommonModule }          from '@angular/common';
+import { CourseWidgetComponent } from './course-widget/components/course-widget.component';
+import { FormsModule }           from '@angular/forms';
+import { UtilityModule }         from '../utility.mod/utility.module';
+import { WhyWeWidgetComponent }   from './why-we-widget/components/why-we-widget.component';
+import { EventWidgetComponent }   from './event-widget/components/event-widget.component';
+import { DiplomWidgetComponent }  from './diplom-widget/components/diplom-widget.component';
+import { SharedModule } from '../shared.mod/shared.module';
+// App
+
+
+@NgModule({
+  declarations: [
+    WhyWeWidgetComponent,
+    EventWidgetComponent,
+    CourseWidgetComponent,
+    DiplomWidgetComponent,
+  ],
+  exports: [
+    CourseWidgetComponent,
+    WhyWeWidgetComponent,
+    EventWidgetComponent,
+    DiplomWidgetComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    UtilityModule,
+    SharedModule
+  ],
+  providers: []
+})
+export class WidgetsModule { }
