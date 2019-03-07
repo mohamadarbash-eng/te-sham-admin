@@ -8,6 +8,7 @@ import { WhyWeWidgetComponent }   from './why-we-widget/components/why-we-widget
 import { EventWidgetComponent }   from './event-widget/components/event-widget.component';
 import { DiplomWidgetComponent }  from './diplom-widget/components/diplom-widget.component';
 import { SharedModule } from '../shared.mod/shared.module';
+import { RouterModule } from '@angular/router';
 // App
 
 
@@ -28,7 +29,8 @@ import { SharedModule } from '../shared.mod/shared.module';
     CommonModule,
     FormsModule,
     UtilityModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   providers: []
 })

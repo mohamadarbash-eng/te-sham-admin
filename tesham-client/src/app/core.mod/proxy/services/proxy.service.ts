@@ -3,11 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export const API_PATH = {
-  COURSES_API: 'api/courses'
+  COURSES_API: '/api/courses'
 };
 // TODO
 
-const base = 'http://localhost:3000/';
+const base = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
 })

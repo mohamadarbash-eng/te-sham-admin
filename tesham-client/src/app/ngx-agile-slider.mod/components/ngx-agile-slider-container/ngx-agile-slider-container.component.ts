@@ -528,7 +528,7 @@ export class SliderContainerComponent implements AfterViewInit, OnDestroy {
 
   /**
    * Prepares for image lazy loading.
-   * Search for all images in the elements.
+   * Search for all courses in the elements.
    */
   public prepareForLazyLoading(node?: any, nodeIndex?: number) {
     if (node) {
@@ -559,7 +559,7 @@ export class SliderContainerComponent implements AfterViewInit, OnDestroy {
   }
 
   /**
-   * Loads the images of current element.
+   * Loads the courses of current element.
    */
   public loadImage() {
     if (!this._sliderElements[this.currentIndex].classList.contains(LAZY_LOADING_CLASSES['loading'])
