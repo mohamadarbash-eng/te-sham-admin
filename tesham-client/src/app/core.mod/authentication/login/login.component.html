@@ -1,0 +1,17 @@
+<div class="row">
+  <form class="col l4 m5 s12" [formGroup]="loginFormGroup">
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="email" id="email" type="text" class="validate">
+        <label for="email">User Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="password" id="password" type="password" class="validate">
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <button type="button" (click)="onClickSubmit()">sign-up</button>
+  </form>
+</div>

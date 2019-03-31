@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CourseDataInterface } from '../interfaces/CourseDataInterface.interface';
+import { CourseDataInterface, CourseInterface } from '../interfaces/CourseDataInterface.interface';
 import { API_PATH, ProxyService } from '../../../core.mod/proxy/services/proxy.service';
 import { routes } from '../../../routes-model';
+
 
 
 @Component({
@@ -10,15 +11,14 @@ import { routes } from '../../../routes-model';
   styleUrls: ['./course-widget.component.scss']
 })
 export class CourseWidgetComponent implements OnInit {
-  @Input() coursesData: Partial<CourseDataInterface>[];
+  @Input() courseList: Partial<CourseInterface>[];
   @Input() withRuler = false;
   public router = routes;
 
   constructor(private _proxyService: ProxyService) {
-    this._proxyService.getProxy(API_PATH.COURSES_API)
-      .subscribe((courses: CourseDataInterface[]) => {
-        console.log(courses);
-        this.coursesData = courses;
+    this._proxyService.getProxy(API_PATH.COURSES_API,  {offset: 0, limit: 3})
+      .subscribe((response: CourseDataInterface[]) => {
+        this.courseList = response['courses'];
       });
   }
 

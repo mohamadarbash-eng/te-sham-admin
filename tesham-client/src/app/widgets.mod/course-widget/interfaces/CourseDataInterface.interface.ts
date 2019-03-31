@@ -1,4 +1,9 @@
 export interface CourseDataInterface {
+courses: CourseInterface;
+totalCount: number;
+}
+
+export interface CourseInterface {
   id: string;
   imageUrl: string;
   imageAlt: string;

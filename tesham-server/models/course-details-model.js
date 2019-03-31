@@ -1,22 +1,21 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const courseSchema = Schema({
+// TODO refactoring
+const courseDetailsSchema = mongoose.Schema({
     imageAlt: String,
     imageUrl: { type: String, default: null },
     title: String,
-    shortDescription: String,
-    courseDetails: { type: Schema.Types.ObjectId, ref: 'CourseDetails' },
+    courseDetails: String,
     category: String,
     price: Number,
     rating: String
 });
 
 
-courseSchema.set('toJSON', {
+courseDetailsSchema.set('toJSON', {
     virtuals: true
 });
-// TODO Count Virtual type
-courseSchema.methods.toJSON = function () {
+
+courseDetailsSchema.methods.toJSON = function () {
     const course = this;
     let courseObject = course.toObject();
     courseObject.id = courseObject._id;
@@ -27,4 +26,4 @@ courseSchema.methods.toJSON = function () {
 };
 
 
-module.exports = mongoose.model('Course', courseSchema);
+module.exports = mongoose.model('CourseDetails', courseDetailsSchema);

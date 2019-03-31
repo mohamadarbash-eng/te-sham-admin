@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer');
+const checkAuth = require('./../middlewares/check-auth');
 
 const courseController = require('./course-routes-controller');
 const router = express.Router();
@@ -22,11 +23,15 @@ const storage = multer.diskStorage({
     }
 });
 
-
-router.post('/api/course', multer({storage:storage}).single('image'),courseController.postCourse);
+/**
+ * Course restful API requests
+ */
+router.post('/api/course',checkAuth, multer({storage:storage}).single('image'),courseController.postCourse);
 router.get('/api/courses', courseController.getCourses);
 router.get('/api/course/:id', courseController.getCourseByID);
 router.delete('/api/course/:id', courseController.deleteCourse);
 router.put('/api/course/:id', multer({storage:storage}).single('image'), courseController.updateCourse);
+router.get('/api/courses/count', courseController.getCoursesCount);
+router.get('/api/course/details/:id', courseController.getCourseDetails);
 
 module.exports = router;

@@ -1,11 +1,13 @@
 // Dep
 const express = require('express');
 const bodyParser = require('body-parser');
-const courseRouters = require('./routes/course-route');
+const userRoutes = require('./routes/course-route');
+const courseRoutes = require('./routes/user/user-routes');
 const mongoose = require('mongoose');
 const path = require('path');
+
 // TODO  -> separate file
-mongoose.connect('mongodb+srv://mohamad:PO8S3a9aUU41M7Bq@cluster0-6cpqt.mongodb.net/tesham-database?retryWrites=true')
+mongoose.connect('mongodb+srv://mohamad:PO8S3a9aUU41M7Bq@cluster0-6cpqt.mongodb.net/tesham-database?retryWrites=true', { useNewUrlParser: true })
     .then(() => {
         console.log('connected to atlas');
     }).catch((error) => {
@@ -20,11 +22,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT, OPTIONS');
     next();
 });
 
-app.use(courseRouters);
+app.use(courseRoutes);
+app.use(userRoutes);
 
 module.exports = app;

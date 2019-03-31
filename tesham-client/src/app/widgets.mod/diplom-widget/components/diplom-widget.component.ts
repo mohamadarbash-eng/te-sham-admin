@@ -7,7 +7,7 @@ import { CourseDataInterface }                         from '../../course-widget
   styleUrls: ['./diplom-widget.component.scss']
 })
 export class DiplomWidgetComponent implements OnInit {
-  @Input() coursesData: Partial<CourseDataInterface>[];
+  @Input() coursesData: any;
   @Input() withRuler = false;
   constructor() { }
 

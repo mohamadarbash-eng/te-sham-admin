@@ -1,12 +1,12 @@
-
-<div class="container">
+<div class="container" *ngIf="courseList  && courseList.length > 0">
   <div class="row">
     <te-app-breadcrumb-pages></te-app-breadcrumb-pages>
-
-  </div>
-  <div style="margin-top: 600px; padding-bottom: 300px">
-    <p id="memo">
-      test
-    </p>
+    <h5 class="center"><span class="te-title">Te-Sham Academy Courses</span></h5></div>
+  <div class="row">
+    <ng-container *ngFor="let course of courseList; let _last = last;">
+      <div class="col l4 m6 s12 course-widget" [ngClass]="{'hide-on-med-and-down': !!_last}">
+        <te-app-course-card [courseData]="course"></te-app-course-card>
+      </div>
+    </ng-container>
   </div>
 </div>

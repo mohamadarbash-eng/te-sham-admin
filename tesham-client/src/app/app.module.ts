@@ -10,6 +10,7 @@ import { FrameModule } from './main.mod/frame.module';
 import { frameRoutes } from './main.mod/frame.router';
 import { appRoutes } from './app-router';
 import { UtilityModule } from './utility.mod/utility.module';
+import { CoreModule } from './core.mod/core.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UtilityModule } from './utility.mod/utility.module';
   imports: [
     BrowserModule,
     FrameModule,
+    CoreModule,
     UtilityModule,
     HttpClientModule,
     StoreModule.forRoot({}),
