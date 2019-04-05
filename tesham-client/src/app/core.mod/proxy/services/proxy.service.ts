@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { SetTokenInterface } from '../../store/authentication.action';
 
 export const API_PATH = {
   COURSES_API: '/api/courses',
@@ -14,11 +16,17 @@ const base = 'http://localhost:3000';
   providedIn: 'root'
 })
 export class ProxyService {
+  private token: string;
 // TODO add authentication request, it should be the first request to send to backend, before the app can running up
-  constructor(private _httpClient: HttpClient) { }
+  constructor(private _httpClient: HttpClient, private store: Store<SetTokenInterface>) {
+    this.store.select('authentication').subscribe((data: SetTokenInterface) => {
+      this.token = data.token;
+      console.log( this.token);
+    });
+  }
  public static initQuery( queryObject: {[key: string]: string | number } ): string {
     let query: number | string = '?';
-    for (const item in queryObject) {
+    for  (const item in queryObject) {
       query += `&${item}=${queryObject[item]}`;
     }
     return query;
@@ -36,5 +44,9 @@ export class ProxyService {
     const urlAPI = base + apiPath;
 
     return this._httpClient.post(urlAPI, body);
+  }
+
+  public get getToken(): string {
+    return this.token;
   }
 }

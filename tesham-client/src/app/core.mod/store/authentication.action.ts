@@ -1,24 +1,19 @@
 import { Action } from '@ngrx/store';
 
-
-export interface UserLoginInterface {
-  login: boolean;
+export interface SetTokenInterface {
+  token: string;
 }
 
 export enum ActionTypes {
-  UserLoggedIn = '[Auth] UserLoggedIn',
+  RemoveToken = '[Auth] UserLoggedIn',
   SetToken = '[Auth] SetToken'
 }
 
-export class UserLoggedIn implements Action {
-  readonly type  = ActionTypes.UserLoggedIn;
-  constructor(public payload: UserLoginInterface = null) {}
-}
-
-
 export class SetToken implements Action {
   readonly type  = ActionTypes.SetToken;
-  constructor(public payload: {token: string } = null) {}
+  constructor(public payload: SetTokenInterface = null) {}
 }
-
-export type ActionsUnion = UserLoggedIn  | SetToken;
+export class RemoveToken implements Action {
+  readonly type = ActionTypes.RemoveToken;
+}
+export type ActionsUnion = RemoveToken  | SetToken;

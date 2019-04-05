@@ -3,11 +3,7 @@ const mongoose = require('mongoose');
 const courseDetailsSchema = mongoose.Schema({
     imageAlt: String,
     imageUrl: { type: String, default: null },
-    title: String,
     courseDetails: String,
-    category: String,
-    price: Number,
-    rating: String
 });
 
 

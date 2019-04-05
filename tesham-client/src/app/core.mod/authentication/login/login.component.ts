@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { API_PATH, ProxyService } from '../../proxy/services/proxy.service';
 import { Store } from '@ngrx/store';
-import { UserLoggedIn, UserLoginInterface } from '../../store/authentication.action';
+import { SetToken, SetTokenInterface } from '../../store/authentication.action';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { UserLoggedIn, UserLoginInterface } from '../../store/authentication.act
 export class LoginComponent implements OnInit {
   public loginFormGroup: FormGroup;
   // TODO validation
-  constructor(private proxyService: ProxyService, private store: Store<UserLoginInterface>) {
+  constructor(private proxyService: ProxyService, private store: Store<SetTokenInterface>) {
     this.loginFormGroup = new FormGroup({
       email: new FormControl(null),
       password: new FormControl(null)
@@ -31,12 +31,12 @@ export class LoginComponent implements OnInit {
       email: this.loginFormGroup.get('email').value ,
       password: this.loginFormGroup.get('password').value
     }).subscribe((result) => {
-      this.store.dispatch(new UserLoggedIn({login: result.login}));
+    if (result.token) {
+      this.store.dispatch(new SetToken({token: result.token}));
       console.log(result);
+    }
     });
-    this.store.select('authentication').subscribe((data) => {
-      console.log(data);
-    });
+
   }
 
 }
