@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
 router.post('/api/course', checkAuth, multer({storage:storage}).single('image'),courseController.postCourse);
 router.get('/api/courses', courseController.getCourses);
 router.get('/api/course/:id', courseController.getCourseByID);
-router.delete('/api/course/:id', courseController.deleteCourse);
+router.delete('/api/course/:id',checkAuth, courseController.deleteCourse);
 router.put('/api/course/:id', checkAuth, multer({storage:storage}).single('image'), courseController.updateCourse);
 router.get('/api/courses/count', courseController.getCoursesCount);
 router.get('/api/course/details/:id', courseController.getCourseDetails);

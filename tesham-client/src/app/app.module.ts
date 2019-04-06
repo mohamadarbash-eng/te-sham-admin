@@ -11,6 +11,7 @@ import { frameRoutes } from './main.mod/frame.router';
 import { appRoutes } from './app-router';
 import { UtilityModule } from './utility.mod/utility.module';
 import { CoreModule } from './core.mod/core.module';
+import { AuthGuards } from './core.mod/guards/auth-guards';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { CoreModule } from './core.mod/core.module';
       ...frameRoutes
     ])
   ],
-  providers: [],
+  providers: [AuthGuards],
   bootstrap: [AppComponent]
 })
 export class AppModule {

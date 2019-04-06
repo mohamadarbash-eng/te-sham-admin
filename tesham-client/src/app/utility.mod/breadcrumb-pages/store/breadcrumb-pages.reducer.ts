@@ -9,10 +9,11 @@ export const initialState: BreadcrumbPagesState = {
 };
 
 export function breadcrumbReducer(state = initialState, action: breadcrumbAction.InitBreadcrumb): BreadcrumbPagesState {
+ console.log('bread');
   switch (action.type) {
     case breadcrumbAction.ActionTypes.Init:
       return action.payload;
     default :
-        return null;
+        return state;
   }
 }

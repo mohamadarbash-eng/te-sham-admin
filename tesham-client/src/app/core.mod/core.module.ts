@@ -5,9 +5,9 @@ import { StoreModule } from '@ngrx/store';
 // App
 import { LoginComponent } from './authentication/login/login.component';
 import { SignupComponent } from './authentication/signup/signup.component';
-import { authenticationReducer } from './store/authentication.reducer';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token-interceptor';
+import { reducers } from './store/index-store';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { TokenInterceptor } from './interceptors/token-interceptor';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forFeature('authentication', authenticationReducer)
+    StoreModule.forFeature('authentication', reducers),
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}]
 })
