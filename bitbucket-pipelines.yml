@@ -12,4 +12,3 @@ pipelines:
           - node
         script: # Modify the commands below to build your repository.
           - npm install
-          - sonar-scanner.bat -D"sonar.projectKey=arbash-tech_te-sham-academy." -D"sonar.organization=arbash-tech-bitbucket" -D"sonar.sources=." -D"sonar.host.url=https://sonarcloud.io" -D"sonar.login=4dd8cd9cc61f365118d2678083ff9c9a0bf7ed09"
