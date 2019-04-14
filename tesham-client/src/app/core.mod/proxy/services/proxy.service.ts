@@ -9,7 +9,7 @@ export const API_PATH = {
   CREATE_NEW_USER: '/api/user/signup',
   LOGIN_USER: '/api/user/login'
 };
-// TODO
+// TODO add it if you deploy to two servers
 
 const base = environment.API_URL;
 
@@ -32,7 +32,7 @@ export class ProxyService {
   }
 
   public getProxy(apiPath: string, query?: { [key: string]: string | number }): Observable<any> {
-    let urlAPI = base + apiPath;
+    let urlAPI = apiPath;
     if (query) {
       urlAPI += ProxyService.initQuery(query);
     }
@@ -40,7 +40,7 @@ export class ProxyService {
   }
 
   public postProxy(apiPath: string, body: { [key: string]: string | number } = null): Observable<any> {
-    const urlAPI = base + apiPath;
+    const urlAPI = apiPath;
 
     return this._httpClient.post(urlAPI, body);
 
