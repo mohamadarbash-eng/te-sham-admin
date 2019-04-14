@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
-// TODO refactoring
-const courseDetailsSchema = mongoose.Schema({
+const curriculumSchema = require('./sub-documents/curriculum-schema');
+// TODO refactoring  review reference doc
+const Schema = mongoose.Schema;
+const courseDetailsSchema = Schema({
     imageAlt: String,
     imageUrl: { type: String, default: null },
-    courseDetails: String,
+    courseDescription: String,
+    curriculum: curriculumSchema,
+    reviews: [{ type: Schema.Types.ObjectId, ref: 'Reviews' }]
 });
 
 

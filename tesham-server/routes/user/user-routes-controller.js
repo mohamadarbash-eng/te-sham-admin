@@ -18,15 +18,17 @@ const userController = {
                     });
                     next();
                 }).catch((error) => {
-                    res.status(500).json({
-                        error
-                    });
+                    res.status(500).json([{
+                        errorId: 'UNKNOWN_ERROR',
+                        errorMessage: error
+                    }]);
                     next();
                 });
             }).catch((error) => {
-            res.status(500).json({
-                error
-            });
+            res.status(500).json([{
+                errorId: 'UNKNOWN_ERROR',
+                errorMessage: error
+            }]);
             next();
         });
 },
@@ -35,31 +37,40 @@ const userController = {
         let userID;
         User.findOne({email: email})
             .then(user => {
-                userID = user.id;
                 if(!user) {
-                    return res.status(401).json({
-                       message: `${email} is not found`
+                   return res.status(401).json({
+                       error:[{errorId: 'CUSTOMER_NOT_FOUND'}]
                     });
+
                 }
+                userID = user.id;
                return bcrypt.compare(password,user.password);
 
-            }).then((result) =>  {
+            }).catch((error) => {
+            res.status(500).json([{
+                errorId: 'UNKNOWN_ERROR',
+                errorMessage: error
+            }]);
+            next();
+        }).then((result) =>  {
             if(!result) {
-                return res.status(401).json({
-                    message: `${email} is not found`
+                 return res.status(401).json({
+                    error:[{errorId: 'PASSWORD_IS_WRONG'}]
                 });
             }
-            const token = jwt.sign({email, id: userID}, 'secret should be changed', {
+            const token = jwt.sign({email, id: userID}, process.env.JWT_KEY , {
                 expiresIn: '1h'
             });
             res.status(200).json({
                 token,
-                login: true
+                login: true,
+                userID
             });
             next();
         }).catch((error) => {
             res.status(401).json({
-                error
+                errorId: 'UNKNOWN_ERROR',
+                errorMessage: error
             });
             next();
         });

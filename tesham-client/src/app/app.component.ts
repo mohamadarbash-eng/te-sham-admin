@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-
+import 'materialize-css';
 @Component({
-  selector: 'app-root',
+  selector: 'te-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

@@ -4,6 +4,9 @@ import { API_PATH, ProxyService } from '../../proxy/services/proxy.service';
 import { Store } from '@ngrx/store';
 import { AuthenticateAction } from '../../store/authenticate.action';
 import { AuthenticateState } from '../../store/authenticate.reducer';
+import { catchError } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
+import { throwError } from 'rxjs';
 
 
 @Component({

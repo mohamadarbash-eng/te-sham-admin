@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { environment } from '../../../../environments/environment';
 
 export const API_PATH = {
   COURSES_API: '/api/courses',
@@ -9,13 +11,14 @@ export const API_PATH = {
 };
 // TODO
 
-const base = 'http://localhost:3000';
+const base = environment.API_URL;
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProxyService {
 // TODO add authentication request, it should be the first request to send to backend, before the app can running up
+// TODO error Handle
   constructor(private _httpClient: HttpClient) {
 
   }
@@ -40,5 +43,6 @@ export class ProxyService {
     const urlAPI = base + apiPath;
 
     return this._httpClient.post(urlAPI, body);
+
   }
 }
