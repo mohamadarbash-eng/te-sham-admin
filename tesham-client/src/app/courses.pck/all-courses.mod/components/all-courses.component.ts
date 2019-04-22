@@ -6,7 +6,7 @@ import { API_PATH, ProxyService } from '../../../core.mod/proxy/services/proxy.s
 import {
   CourseDataInterface,
   CourseInterface
-} from '../../../widgets.mod/course-widget/interfaces/CourseDataInterface.interface';
+} from '../../../core.mod/interfaces/course-data-Interface.interface';
 @Component({
   selector: 'te-app-all-courses-widget',
   templateUrl: './all-courses.component.html',
@@ -14,7 +14,7 @@ import {
 })
 export class AllCoursesComponent implements OnInit {
 public courseList: Partial<CourseInterface>[];
-  constructor(private store: Store<BreadcrumbPagesState>, private _proxyService: ProxyService) {
+  constructor(private _store: Store<BreadcrumbPagesState>, private _proxyService: ProxyService) {
     this._proxyService.getProxy(API_PATH.COURSES_API)
       .subscribe((response: CourseDataInterface[]) => {
         this.courseList = response['courses'];
@@ -22,7 +22,7 @@ public courseList: Partial<CourseInterface>[];
   }
 
   ngOnInit() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     const temp = [
       {
         item: 'PRIMARY',
@@ -56,6 +56,6 @@ public courseList: Partial<CourseInterface>[];
         linkTo: 'hello'
       }
     ];
-    this.store.dispatch(new InitBreadcrumb({data: temp}));
+    this._store.dispatch(new InitBreadcrumb({data: temp}));
   }
 }

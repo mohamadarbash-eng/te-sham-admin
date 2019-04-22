@@ -11,6 +11,7 @@ import { SocialIconsComponent } from './social-icons/components/social-icons.com
 import { ReadMoreComponent } from './read-more/components/read-more.component';
 import { BreadcrumbPagesComponent } from './breadcrumb-pages/components/breadcrumb-pages.component';
 import { breadcrumbReducer } from './breadcrumb-pages/store/breadcrumb-pages.reducer';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,16 @@ import { breadcrumbReducer } from './breadcrumb-pages/store/breadcrumb-pages.red
     AppVersionComponent,
     SocialIconsComponent,
     ReadMoreComponent,
-    BreadcrumbPagesComponent
+    BreadcrumbPagesComponent,
+    PageHeaderComponent
   ],
   exports: [
     TranslatePipe,
     AppVersionComponent,
     SocialIconsComponent,
     ReadMoreComponent,
-    BreadcrumbPagesComponent
+    BreadcrumbPagesComponent,
+    PageHeaderComponent
   ],
   imports: [
     CommonModule,

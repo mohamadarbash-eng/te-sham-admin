@@ -16,4 +16,13 @@ export const appRoutes: Routes = [
   {
     path: routes.courses,
     loadChildren: './courses.pck/all-courses.mod/all-courses.module#AllCoursesModule'
-  }];
+  },
+  {
+    path: routes.diplomas,
+    loadChildren: './diplomas.pck/all-diploms.mod/all-diplomas.module#AllDiplomasModule'
+  },
+  {
+    path: routes.courseDetail + '/:courseName',
+    loadChildren: './courses.pck/details-course.mod/details-course.module#DetailsCourseModule'
+  }
+];

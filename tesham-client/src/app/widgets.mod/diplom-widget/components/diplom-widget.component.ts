@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CourseDataInterface }                         from '../../course-widget/interfaces/CourseDataInterface.interface';
+import { routes } from '../../../routes-model';
 
 @Component({
   selector: 'te-app-diplom-widget',
@@ -9,6 +9,7 @@ import { CourseDataInterface }                         from '../../course-widget
 export class DiplomWidgetComponent implements OnInit {
   @Input() coursesData: any;
   @Input() withRuler = false;
+  public router = routes;
   constructor() { }
 
   ngOnInit() {

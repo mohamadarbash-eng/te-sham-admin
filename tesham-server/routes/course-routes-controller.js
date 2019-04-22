@@ -12,15 +12,15 @@ const courseController = {
 
         const courseModel = new Course({
             ...course,
-            imageUrl: req.file ? `/assets/images/courses/${req.file.filename}`: null
+            imageUrl: req.file ? `/assets/images/courses/${req.file.filename}` : null
         });
-       courseModel.courseDetails = courseDetailsModel;
-       // TODO use promise.all
-       Promise.all([courseModel.save(),courseDetailsModel.save()]).then((data) => {
-                res.status(201).json({
-                    error: null
-                });
-                next();
+        courseModel.courseDetails = courseDetailsModel;
+        // TODO use promise.all
+        Promise.all([courseModel.save(), courseDetailsModel.save()]).then((data) => {
+            res.status(201).json({
+                error: null
+            });
+            next();
         }).catch((error) => {
             res.status(400).json({error});
             next();
@@ -44,16 +44,16 @@ const courseController = {
         });
 
     },
-     getCoursesCount(req, res, next) {
-         Course.estimatedDocumentCount().then((courseCount) => {
-             res.status(200).json({
-                 courseCount
-             });
-             next();
-         }).catch((error) => {
-             res.status(400).json({error});
-             next();
-         });
+    getCoursesCount(req, res, next) {
+        Course.estimatedDocumentCount().then((courseCount) => {
+            res.status(200).json({
+                courseCount
+            });
+            next();
+        }).catch((error) => {
+            res.status(400).json({error});
+            next();
+        });
 
     },
     getCourseByID(req, res, next) {
@@ -66,8 +66,12 @@ const courseController = {
         }).catch((error) => res.status(400).json({error}));
     },
     getCourseDetails(req, res, next) {
-        const {id} = req.params;
-        Course.findById(id).populate('courseDetails').then((course) => {
+        const {courseName} = req.params;
+        Course.findById(courseName).populate(
+            {
+                path: 'courseDetails',
+                populate: {path: 'reviews'}
+            }).then((course) => {
             res.status(200).json(
                 course
             );

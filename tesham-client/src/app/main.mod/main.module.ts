@@ -31,4 +31,4 @@ import { RouterModule }         from '@angular/router';
   ],
   providers: [],
 })
-export class FrameModule { }
+export class MainModule { }

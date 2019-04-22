@@ -1,9 +1,9 @@
 //
 const app = require('./app');
 
-const debug = require('debug')('node-angular');
+const debug = require('debug')('http');
 const http = require('http');
-
+debug('booting %o', 'test');
 const normalizePort = val => {
   const port = parseInt(val, 10);
 

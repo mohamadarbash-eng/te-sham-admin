@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-//import { CourseDataInterface }      from '../../../widgets.mod/course-widget/interfaces/CourseDataInterface.interface';
+import { CourseInterface } from '../../../core.mod/interfaces/course-data-Interface.interface';
+import { routes } from '../../../routes-model';
 
 @Component({
   selector: 'te-app-course-card',
@@ -7,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./course-card.component.scss']
 })
 export class CourseCardComponent implements OnInit {
-  @Input('courseData') course: any;
+  public routes = routes;
+  @Input('courseData') course: CourseInterface;
 
   constructor() {
   }

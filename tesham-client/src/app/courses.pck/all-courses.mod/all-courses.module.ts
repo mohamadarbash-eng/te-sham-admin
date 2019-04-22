@@ -8,6 +8,7 @@ import { AllCoursesComponent }     from './components/all-courses.component';
 import { NgxAgileSliderModule }    from '../../ngx-agile-slider.mod/ngx-agile-slider.module';
 import { WidgetsModule }           from '../../widgets.mod/widgets.module';
 import { SharedModule } from '../../shared.mod/shared.module';
+import { FrameModule } from '../../frame.pck/frame.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SharedModule } from '../../shared.mod/shared.module';
     AllCoursesRoutingModule,
     NgxAgileSliderModule,
     WidgetsModule,
+    FrameModule,
     SharedModule
   ]
 })

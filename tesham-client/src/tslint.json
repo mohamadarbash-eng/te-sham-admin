@@ -13,6 +13,7 @@
       "te-app",
       "kebab-case"
     ],
-  "import-spacing": false
+    "import-spacing": false,
+    "forin": false
   }
 }

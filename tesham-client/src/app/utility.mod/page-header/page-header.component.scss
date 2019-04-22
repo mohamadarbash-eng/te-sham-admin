@@ -1,0 +1,15 @@
+.te-app-page-header {
+  margin-top: -63px;
+  position: relative;
+  .container {
+    & .te-app-page-title {
+      display: inline-block;
+      background-color: #fff;
+      margin: 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 15px 10px 8px 10px;
+    }
+  }
+
+}

@@ -1,0 +1,9 @@
+<div>
+  <div *ngFor="let tab of tabs; let index = index">
+    <input type="radio" id="" [value]="tab.value" [checked]="tab.checked">
+    <label for="">
+      {{tab.title}}
+      <img [src]="tab.img" alt="">
+    </label>
+  </div>
+</div>

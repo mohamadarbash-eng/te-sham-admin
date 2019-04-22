@@ -6,6 +6,7 @@ import { CourseCardComponent } from './course-card/components/course-card.compon
 import { DiplomCardComponent } from './diplom-card/components/diplom-card.component';
 import { UtilityModule } from '../utility.mod/utility.module';
 import { UpcomingEventCardComponent } from './event-card/components/upcoming-event-card.component';
+import { RouterModule } from '@angular/router';
 
 
 // App
@@ -28,6 +29,7 @@ import { UpcomingEventCardComponent } from './event-card/components/upcoming-eve
     CommonModule,
     FormsModule,
     UtilityModule,
+    RouterModule
 
   ],
   providers: []

@@ -1,9 +1,9 @@
-export interface CourseDataInterface {
-courses: CourseInterface;
-totalCount: number;
+export interface DiplomaDataInterfaceInterface {
+  courses: DiplomInterface;
+  totalCount: number;
 }
 
-export interface CourseInterface {
+export interface DiplomInterface {
   id: string;
   imageUrl: string;
   imageAlt: string;

@@ -6,12 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 // App
 import { AppComponent } from './app.component';
-import { FrameModule } from './main.mod/frame.module';
-import { frameRoutes } from './main.mod/frame.router';
+import { frameRoutes } from './main.mod/main.router';
 import { appRoutes } from './app-router';
 import { UtilityModule } from './utility.mod/utility.module';
 import { CoreModule } from './core.mod/core.module';
 import { AuthGuards } from './core.mod/guards/auth-guards';
+import { FrameModule } from './frame.pck/frame.module';
+import { MainModule } from './main.mod/main.module';
 
 
 @NgModule({
@@ -20,8 +21,9 @@ import { AuthGuards } from './core.mod/guards/auth-guards';
   ],
   imports: [
     BrowserModule,
-    FrameModule,
+    MainModule,
     CoreModule,
+    FrameModule,
     UtilityModule,
     HttpClientModule,
     StoreModule.forRoot({}),
