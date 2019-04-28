@@ -10,22 +10,22 @@ export interface CourseInterface {
   title: string;
   courseName: string;
   shortDescription: string;
-  courseDetails: string | CourseDetailsInterface;
+  courseDetails: CourseDetailsInterface | string;
   category: string;
   price: number;
   rating: number;
 }
 
 export interface CourseDetailsInterface {
-  imageAlt: string;
-  imageUrl: string;
-  courseDescription: string;
+  medias: {type: 'image' | 'video'; title: string; alt: string; url: string} [];
+  courseDescription: {title: string; content: string};
   curriculum: CourseCurriculumInterface;
   reviews: any[];
+  breadCrumb: {label: string; linkTo: 'courseDescription' | 'curriculum' | 'reviews'}[];
 }
 
 export interface CourseCurriculumInterface {
   title: string;
   subTitle: string;
-  curriculum: CourseCurriculumInterface[];
+  content: {title: string; subTitle: string; description: string; subCurriculum?: {title: string; subTitle: string; description: string}[]}[];
 }

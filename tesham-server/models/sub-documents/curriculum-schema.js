@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const curriculumSchema = mongoose.Schema({
     title: String,
     subTitle: String,
-    curriculum: [{title: String, subTitle: String, subCurriculum: []}],
+    content: [{title: String, subTitle: String, description: String, subCurriculum: []}],
 
 });
 

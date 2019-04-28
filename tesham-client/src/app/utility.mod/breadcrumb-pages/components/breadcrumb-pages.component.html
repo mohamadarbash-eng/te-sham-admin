@@ -1,23 +1,23 @@
 <div class="te-breadcrumb-container">
-  <ul>
+  <ul class="container">
     <ng-container *ngFor="let element of  breadcrumbData; let _last = last">
-      <li *ngIf="element && element.item === 'PRIMARY' && !!element.route" class="te-breadcrumb-primary"
+      <li *ngIf="element && element.item === itemType.primary && !!element.route" class="te-breadcrumb-primary"
           [ngClass]="{'last-element' : _last}">
         <a [routerLink]="element.route">
           <span>{{element.label}}</span>
         </a>
       </li>
-      <li *ngIf="element && element.item === 'PRIMARY' && !!!element.route" class="te-breadcrumb-primary"
+      <li *ngIf="element && element.item === itemType.primary && !!!element.route" class="te-breadcrumb-primary"
           [ngClass]="{'last-element' : _last}">
         <span>{{element.label}}</span>
       </li>
-      <li *ngIf="element && element.item === 'SECONDARY' && !!element.linkTo" class="te-breadcrumb-secondary"
+      <li *ngIf="element && !element.item  && !!element.linkTo" class="te-breadcrumb-secondary"
           [ngClass]="{'last-element' : _last}">
         <a (click)="onClickScrollTo(element.linkTo)">
           <span>{{element.label}}</span>
         </a>
       </li>
-      <li *ngIf="element && element.item === 'SECONDARY' && !!!element.linkTo" class="te-breadcrumb-secondary"
+      <li *ngIf="element && !element.item  && !!!element.linkTo" class="te-breadcrumb-secondary"
           [ngClass]="{'last-element' : _last}">
 
         <span>{{element.label}}</span>

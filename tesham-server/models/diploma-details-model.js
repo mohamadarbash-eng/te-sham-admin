@@ -3,20 +3,19 @@ const curriculumSchema = require('./sub-documents/curriculum-schema');
 // TODO refactoring  review reference doc
 // TODO : restructure reviews to use virtual populate
 const Schema = mongoose.Schema;
-const courseDetailsSchema = Schema({
+const diplomaDetailsSchema = Schema({
     medias: [{type: 'image' | 'video', title: String, alt: String, url: {type: String, default: null}}],
-    courseDescription: {title: String, content: String},
-    curriculum:  curriculumSchema,
-    reviews: [{type: Schema.Types.ObjectId, ref: 'Reviews'}],
-    breadCrumb: [{label: String, linkTo: 'courseDescription' | 'curriculum' | 'reviews'}]
+    diplomaDescription: {title: String, content: String},
+    curriculum: {title: String, content: curriculumSchema},
+    reviews: [{type: Schema.Types.ObjectId, ref: 'Reviews'}]
 });
 
 
-courseDetailsSchema.set('toJSON', {
+diplomaDetailsSchema.set('toJSON', {
     virtuals: true
 });
 
-courseDetailsSchema.methods.toJSON = function () {
+diplomaDetailsSchema.methods.toJSON = function () {
     const course = this;
     let courseObject = course.toObject();
     courseObject.id = courseObject._id;
@@ -27,4 +26,4 @@ courseDetailsSchema.methods.toJSON = function () {
 };
 
 
-module.exports = mongoose.model('CourseDetails', courseDetailsSchema);
+module.exports = mongoose.model('DiplomaDetails', diplomaDetailsSchema);

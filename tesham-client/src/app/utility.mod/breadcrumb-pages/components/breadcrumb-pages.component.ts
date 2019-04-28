@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select, } from '@ngrx/store';
 
+export enum itemType {
+  primary = 'PRIMARY',
+  secondary = 'SECONDARY'
+}
+
 @Component({
   selector: 'te-app-breadcrumb-pages',
   templateUrl: './breadcrumb-pages.component.html',
@@ -8,6 +13,7 @@ import { Store, select, } from '@ngrx/store';
 })
 export class BreadcrumbPagesComponent implements OnInit {
   public breadcrumbData: any;
+  public itemType = itemType;
 
   constructor(private _store: Store<{ breadcrumb: { data: any } }>) {
 

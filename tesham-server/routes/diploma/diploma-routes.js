@@ -1,6 +1,6 @@
 const express = require('express');
-const checkAuth = require('./../middlewares/check-auth');
-const extractFile = require('./../middlewares/extract-file');
+const checkAuth = require('./../../middlewares/check-auth');
+const extractFile = require('./../../middlewares/extract-file');
 const diplomaController = require('./diploma-routes-controller');
 const router = express.Router();
 

@@ -1,8 +1,9 @@
 // Dep
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRoutes = require('./routes/course-route');
-const courseRoutes = require('./routes/user/user-routes');
+const  courseRoutes = require('./routes/course/course-routes');
+const  userRoutes = require('./routes/user/user-routes');
+const  diplomaRoutes= require('./routes/diploma/diploma-routes');
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -35,11 +36,15 @@ app.use('/', express.static(path.join(__dirname, 'tesham-client')));
 
 app.use(courseRoutes);
 app.use(userRoutes);
+app.use(diplomaRoutes);
 /**
  * because I use one server, otherwise delete it
  */
+
+/*
 app.use((req, res, next) => {
+
     res.sendFile(path.join(__dirname, 'tesham-client', 'index.html'));
 });
-
+*/
 module.exports = app;

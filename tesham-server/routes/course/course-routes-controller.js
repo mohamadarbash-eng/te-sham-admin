@@ -1,5 +1,5 @@
-const Course = require('../models/course-model');
-const CourseDetails = require('../models/course-details-model');
+const Course = require('./../../models/course-model');
+const CourseDetails = require('./../../models/course-details-model');
 /**
  * CourseController Object, it contains Course Model's CRUDs
  * @type {{postCourse(*, *, *): void, getCourses(*, *, *): void, deleteCourse(*, *, *): void, updateCourse(*, *, *): void, getCourseByID(*, *, *): void}}
@@ -12,7 +12,7 @@ const courseController = {
 
         const courseModel = new Course({
             ...course,
-            imageUrl: req.file ? `/assets/images/courses/${req.file.filename}` : null
+            imageUrl: req.file ? `/assets/images/${req.file.filename}` : null
         });
         courseModel.courseDetails = courseDetailsModel;
         // TODO use promise.all
@@ -33,6 +33,7 @@ const courseController = {
             courseQuery.skip(+offset).limit(+limit)
         }
         Promise.all([courseQuery, Course.estimatedDocumentCount()]).then((courses) => {
+            console.log(courses);
             res.status(200).json({
                 courses: courses[0],
                 totalCount: courses[1]
@@ -89,7 +90,7 @@ const courseController = {
     },
     updateCourse(req, res, next) {
         const {id} = req.params;
-        const imageUrl = req.file ? `/assets/images/courses/${req.file.filename}`
+        const imageUrl = req.file ? `/assets/images/${req.file.filename}`
             : req.body.imageUrl;
         const courseData = {
             imageUrl,

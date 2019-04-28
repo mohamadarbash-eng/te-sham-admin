@@ -1,86 +1,47 @@
 <div class="te-full-container">
   <div class="row te-app-slider-wrapper">
     <te-app-ngx-agile-slider-container [sliderOptions]="{ loop: true, lazyLoading: false }">
-      <te-app-ngx-agile-slider-item>
-        <te-app-image-carousel [imgUrl]="'./../../assets/test-1.png'">
-
-        </te-app-image-carousel>
-      </te-app-ngx-agile-slider-item>
-      <te-app-ngx-agile-slider-item>
-        <te-app-image-carousel [imgUrl]="'./../../assets/test-1.png'">
-
-        </te-app-image-carousel>
-      </te-app-ngx-agile-slider-item>
-      <te-app-ngx-agile-slider-item>
-        <te-app-image-carousel [imgUrl]="'./../../assets/test-1.png'">
-
-        </te-app-image-carousel>
-      </te-app-ngx-agile-slider-item>
-      <te-app-ngx-agile-slider-item>
-        <te-app-image-carousel [imgUrl]="'./../../assets/test-1.png'">
-
-        </te-app-image-carousel>
-      </te-app-ngx-agile-slider-item>
+      <ng-container *ngFor="let item of courseDetails?.courseDetails?.medias">
+        <te-app-ngx-agile-slider-item>
+          <te-app-image-carousel [imgUrl]="'./../../assets/' + item.url">
+          </te-app-image-carousel>
+        </te-app-ngx-agile-slider-item>
+      </ng-container>
     </te-app-ngx-agile-slider-container>
-
   </div>
   <div class="row">
-<te-app-page-header [pageTitle]="courseDetails?.title || 'HEALLO HEALLO  HEALLO'"></te-app-page-header>
+    <te-app-page-header [pageTitle]="courseDetails?.title || 'HEALLO HEALLO  HEALLO'"></te-app-page-header>
   </div>
   <div class="container row">
-    dmsokmdogmdgmogodsgdddddddddddddd
-    sgdssgggsgvsvgsd
-    gvsssssssssssss
-    vsgdddddddddddddddddd
-    gsvdddddddddddddd
+    <div class="row" *ngIf="courseDetails?.courseDetails?.courseDescription">
+      <h4 class="te-title">{{courseDetails.courseDetails.courseDescription.title}}</h4>
+      <p [innerHTML]="courseDetails.courseDetails.courseDescription.content"></p>
+    </div>
+    <div class="row" *ngIf="courseDetails?.courseDetails?.curriculum">
+      <h4 class="te-title"
+          *ngIf="courseDetails?.courseDetails?.curriculum?.title">{{courseDetails?.courseDetails?.curriculum?.title}}</h4>
+      <h6
+        *ngIf="courseDetails?.courseDetails?.curriculum?.subTitle">{{courseDetails?.courseDetails?.curriculum?.subTitle}}</h6>
+      <ul *ngFor="let item of courseDetails.courseDetails.curriculum.content">
+        <li>
+          <div (click)="onClickExpand(item)">
+            <h4 class="te-list-title" *ngIf="item.title">{{item.title}}</h4>
+            <h6 *ngIf="item.subTitle">{{item.subTitle}}</h6>
+            <p *ngIf="item.description">{{item.description}}</p>
+          </div>
+          <ng-container *ngIf="item.subCurriculum && item.expand">
+            <ul *ngFor="let item of item?.subCurriculum" class="te-app-sub-list">
+              <li>
+                <div>
+                  <h4 class="te-list-title" *ngIf="item.title">{{item.title}}</h4>
+                  <h6 *ngIf="item.subTitle">{{item.subTitle}}</h6>
+                  <p *ngIf="item.description">{{item.description}}</p>
+                </div>
+              </li>
+            </ul>
+          </ng-container>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="row">
-    dmsokmdogmdgmogodsgdddddddddddddd
-    sgdssgggsgvsvgsd
-    gvsssssssssssss
-    vsgdddddddddddddddddd
-    gsvdddddddddddddd
-  </div>
-  <div class="row">
-    dmsokmdogmdgmogodsgdddddddddddddd
-    sgdssgggsgvsvgsd
-    gvsssssssssssss
-    vsgdddddddddddddddddd
-    gsvdddddddddddddd
-  </div>
-  <div class="row">
-    dmsokmdogmdgmogodsgdddddddddddddd
-    sgdssgggsgvsvgsd
-    gvsssssssssssss
-    vsgdddddddddddddddddd
-    gsvdddddddddddddd
-  </div>  <div class="row">
-  dmsokmdogmdgmogodsgdddddddddddddd
-  sgdssgggsgvsvgsd
-  gvsssssssssssss
-  vsgdddddddddddddddddd
-  gsvdddddddddddddd
-</div>
-  <div class="row">
-    dmsokmdogmdgmogodsgdddddddddddddd
-    sgdssgggsgvsvgsd
-    gvsssssssssssss
-    vsgdddddddddddddddddd
-    gsvdddddddddddddd
-  </div>
-  <div class="row">
-    dmsokmdogmdgmogodsgdddddddddddddd
-    sgdssgggsgvsvgsd
-    gvsssssssssssss
-    vsgdddddddddddddddddd
-    gsvdddddddddddddd
-  </div>
-  <div class="row">
-    dmsokmdogmdgmogodsgdddddddddddddd
-    sgdssgggsgvsvgsd
-    gvsssssssssssss
-    vsgdddddddddddddddddd
-    gsvdddddddddddddd
-  </div>
-
 </div>
