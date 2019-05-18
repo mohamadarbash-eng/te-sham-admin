@@ -24,5 +24,9 @@ export const appRoutes: Routes = [
   {
     path: routes.courseDetail + '/:courseName',
     loadChildren: './courses.pck/details-course.mod/details-course.module#DetailsCourseModule'
+  },
+  {
+    path: routes.diplomaDetail + '/:diplomaName',
+    loadChildren: './diplomas.pck/details-diploma.mod/details-diploma.module#DetailsDiplomaModule'
   }
 ];

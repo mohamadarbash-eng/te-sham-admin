@@ -8,6 +8,8 @@ import { NgxAgileSliderModule }    from '../../ngx-agile-slider.mod/ngx-agile-sl
 import { WidgetsModule }           from '../../widgets.mod/widgets.module';
 import { SharedModule } from '../../shared.mod/shared.module';
 import { AllDiplomasComponent } from './components/all-diplomas.component';
+import { AllCoursesRoutingModule } from '../../courses.pck/all-courses.mod/all-courses-routing.module';
+import { FrameModule } from '../../frame.pck/frame.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { AllDiplomasComponent } from './components/all-diplomas.component';
     AllDiplomasRoutingModule,
     NgxAgileSliderModule,
     WidgetsModule,
-    SharedModule
+    SharedModule,
+    FrameModule
   ]
 })
 export class AllDiplomasModule { }

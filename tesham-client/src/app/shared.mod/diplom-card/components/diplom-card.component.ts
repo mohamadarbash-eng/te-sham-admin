@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-//import { CourseDataInterface }      from '../../../widgets.mod/course-widget/interfaces/CourseDataInterface.interface';
+import { CourseInterface } from '../../../core.mod/interfaces/course-data-Interface.interface';
+import { DiplomaInterface } from '../../../core.mod/interfaces/diploma-data-Interface.interface';
 
 @Component({
   selector: 'te-app-diplom-card',
@@ -7,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./diplom-card.component.scss']
 })
 export class DiplomCardComponent implements OnInit {
-  @Input('courseData') course: any;
+  @Input('data') diploma: DiplomaInterface;
+  @Input() route: string;
   constructor() { }
 
   ngOnInit() {

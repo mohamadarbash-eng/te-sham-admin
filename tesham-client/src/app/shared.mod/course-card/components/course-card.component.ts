@@ -8,8 +8,8 @@ import { routes } from '../../../routes-model';
   styleUrls: ['./course-card.component.scss']
 })
 export class CourseCardComponent implements OnInit {
-  public routes = routes;
-  @Input('courseData') course: CourseInterface;
+  @Input('data') course: CourseInterface;
+  @Input() route: string;
 
   constructor() {
   }

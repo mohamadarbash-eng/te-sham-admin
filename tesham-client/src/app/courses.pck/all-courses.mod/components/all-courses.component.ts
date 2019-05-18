@@ -7,6 +7,7 @@ import {
   CourseDataInterface,
   CourseInterface
 } from '../../../core.mod/interfaces/course-data-Interface.interface';
+import { routes } from '../../../routes-model';
 @Component({
   selector: 'te-app-all-courses-widget',
   templateUrl: './all-courses.component.html',
@@ -14,6 +15,7 @@ import {
 })
 export class AllCoursesComponent implements OnInit {
 public courseList: Partial<CourseInterface>[];
+  public routes = routes;
   constructor(private _store: Store<BreadcrumbPagesState>, private _proxyService: ProxyService) {
     this._proxyService.getProxy(API_PATH.COURSES_API)
       .subscribe((response: CourseDataInterface[]) => {
@@ -36,22 +38,18 @@ public courseList: Partial<CourseInterface>[];
       },
 
       {
-        item: 'SECONDARY',
         label: 'Homepage',
         linkTo: 'hello'
       },
       {
-        item: 'SECONDARY',
         label: 'Homepage',
         linkTo: 'hello'
       },
       {
-        item: 'SECONDARY',
         label: 'Homepage',
         linkTo: 'memo'
       },
       {
-        item: 'SECONDARY',
         label: 'Homepage',
         linkTo: 'hello'
       }

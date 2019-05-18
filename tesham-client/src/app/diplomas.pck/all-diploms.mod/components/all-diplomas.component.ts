@@ -4,9 +4,10 @@ import { InitBreadcrumb } from '../../../utility.mod/breadcrumb-pages/store/brea
 import { BreadcrumbPagesState } from '../../../utility.mod/breadcrumb-pages/store/breadcrumb-pages.reducer';
 import { API_PATH, ProxyService } from '../../../core.mod/proxy/services/proxy.service';
 import {
-  DiplomaDataInterfaceInterface,
-  DiplomInterface
+  DiplomaInterface
 } from '../../../core.mod/interfaces/diploma-data-Interface.interface';
+import { CourseDataInterface } from '../../../core.mod/interfaces/course-data-Interface.interface';
+import { routes } from '../../../routes-model';
 
 @Component({
   selector: 'te-app-all-courses-widget',
@@ -14,13 +15,17 @@ import {
   styleUrls: ['./all-diplomas.component.scss']
 })
 export class AllDiplomasComponent implements OnInit {
-  public diplomaList: Partial<DiplomInterface>[];
-
+  public diplomaList: Partial<DiplomaInterface>[];
+  public routes = routes;
   constructor(private store: Store<BreadcrumbPagesState>, private _proxyService: ProxyService) {
-    this._proxyService.getProxy(API_PATH.DIPLOMAS_API)
-      .subscribe((response: DiplomaDataInterfaceInterface[]) => {
+    this._proxyService.getProxy(API_PATH.COURSES_API)
+      .subscribe((response: CourseDataInterface[]) => {
         this.diplomaList = response['courses'];
       });
+/*    this._proxyService.getProxy(API_PATH.DIPLOMAS_API)
+      .subscribe((response: DiplomaDataInterfaceInterface[]) => {
+        this.diplomaList = response['diplomas'];
+      });*/
   }
 
   ngOnInit() {

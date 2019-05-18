@@ -4,5 +4,6 @@ export const routes = {
   login: 'login',
   signUp: 'signup',
   diplomas: 'diplomas',
-  courseDetail: 'courseDetails'
+  courseDetail: 'courseDetails',
+  diplomaDetail: 'diplomaDetails'
 };

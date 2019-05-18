@@ -1,12 +1,36 @@
 <div class="container" *ngIf="diplomaList  && diplomaList.length > 0">
+  <div class="row te-app-slider-wrapper">
+    <te-app-ngx-agile-slider-container [sliderOptions]="{ loop: true, lazyLoading: false }">
+      <te-app-ngx-agile-slider-item>
+        <te-app-image-carousel [imgUrl]="'./../../assets/test-1.png'">
+
+        </te-app-image-carousel>
+      </te-app-ngx-agile-slider-item>
+      <te-app-ngx-agile-slider-item>
+        <te-app-image-carousel [imgUrl]="'./../../assets/test-1.png'">
+
+        </te-app-image-carousel>
+      </te-app-ngx-agile-slider-item>
+      <te-app-ngx-agile-slider-item>
+        <te-app-image-carousel [imgUrl]="'./../../assets/test-1.png'">
+
+        </te-app-image-carousel>
+      </te-app-ngx-agile-slider-item>
+      <te-app-ngx-agile-slider-item>
+        <te-app-image-carousel [imgUrl]="'./../../assets/test-1.png'">
+
+        </te-app-image-carousel>
+      </te-app-ngx-agile-slider-item>
+    </te-app-ngx-agile-slider-container>
+  </div>
   <div class="row">
-    <te-app-breadcrumb-pages></te-app-breadcrumb-pages>
-    <h5 class="center"><span class="te-title">Te-Sham Academy Diplomas</span></h5></div>
+    <te-app-page-header [pageTitle]="'Te-Sham Academy Courses'"></te-app-page-header>
   <div class="row">
-    <ng-container *ngFor="let course of diplomaList; let _last = last;">
+    <ng-container *ngFor="let diploma of diplomaList; let _last = last;">
       <div class="col l4 m6 s12 course-widget" [ngClass]="{'hide-on-med-and-down': !!_last}">
-        <te-app-course-card [courseData]="course"></te-app-course-card>
+        <te-app-diplom-card [route]="routes.diplomaDetail" [data]="diploma"></te-app-diplom-card>
       </div>
     </ng-container>
   </div>
+</div>
 </div>

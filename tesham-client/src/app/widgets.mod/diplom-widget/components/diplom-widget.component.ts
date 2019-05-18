@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { routes } from '../../../routes-model';
+import { API_PATH, ProxyService } from '../../../core.mod/proxy/services/proxy.service';
+import { CourseDataInterface } from '../../../core.mod/interfaces/course-data-Interface.interface';
+import { DiplomaDataInterface, DiplomaInterface } from '../../../core.mod/interfaces/diploma-data-Interface.interface';
 
 @Component({
   selector: 'te-app-diplom-widget',
@@ -7,37 +10,23 @@ import { routes } from '../../../routes-model';
   styleUrls: ['./diplom-widget.component.scss']
 })
 export class DiplomWidgetComponent implements OnInit {
-  @Input() coursesData: any;
+  @Input() diplomaData: Partial<DiplomaInterface>[];
   @Input() withRuler = false;
   public router = routes;
-  constructor() { }
+  constructor(private _proxyService: ProxyService) {
+    this._proxyService.getProxy(API_PATH.COURSES_API, {offset: 0, limit: 3})
+      .subscribe((response: CourseDataInterface[]) => {
+        this.diplomaData = response['courses'];
+      });
+
+    /*this._proxyService.getProxy(API_PATH.COURSES_API, {offset: 0, limit: 3})
+      .subscribe((response: DiplomaDataInterface[]) => {
+        this.diplomaData = response['diploma'];
+      });
+  */
+  }
 
   ngOnInit() {
-    this.coursesData = [{
-      imageAlt: 'imageAlt',
-      imageUrl: 'course_1.jpg',
-      title: 'English Grammar',
-      shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis',
-      category: 'Art & Design',
-      price: 15000,
-      rating: 4.3
-    }, {
-      title: 'English Grammar',
-      imageAlt: 'imageAlt',
-      imageUrl: 'course_3.jpg',
-      shortDescription: 'Lorem ipsum dolor sit amet, nsectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis',
-      category: 'Art & Design',
-      price: 15000,
-      rating: 4.3
-    }, {
-      imageAlt: 'imageAlt',
-      imageUrl: 'course_2.jpg',
-      title: 'English Grammar',
-      shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis',
-      category: 'Art & Design',
-      price: 15000,
-      rating: 4.3
-    }];
   }
 
 }

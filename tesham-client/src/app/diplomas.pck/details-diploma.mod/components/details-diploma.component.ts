@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  CourseDataInterface,
-  CourseDetailsInterface,
-  CourseInterface
-} from '../../../core.mod/interfaces/course-data-Interface.interface';
+
 import { Store } from '@ngrx/store';
 import { BreadcrumbPagesState } from '../../../utility.mod/breadcrumb-pages/store/breadcrumb-pages.reducer';
 import { API_PATH, ProxyService } from '../../../core.mod/proxy/services/proxy.service';
@@ -12,14 +8,15 @@ import { switchMap } from 'rxjs/operators';
 import { InitBreadcrumb } from '../../../utility.mod/breadcrumb-pages/store/breadcrumb-pages.action';
 import { routes } from '../../../routes-model';
 import { itemType } from '../../../utility.mod/breadcrumb-pages/components/breadcrumb-pages.component';
+import { DiplomaInterface } from '../../../core.mod/interfaces/diploma-data-Interface.interface';
 
 @Component({
   selector: 'te-app-details-course',
-  templateUrl: './details-course.component.html',
-  styleUrls: ['./details-course.component.scss']
+  templateUrl: './details-diploma.component.html',
+  styleUrls: ['./details-diploma.component.scss']
 })
-export class DetailsCourseComponent implements OnInit {
-  public courseDetails: CourseInterface;
+export class DetailsDiplomaComponent implements OnInit {
+  public courseDetails: DiplomaInterface;
   public courseCount: number;
 
   constructor(private _store: Store<BreadcrumbPagesState>, proxyService: ProxyService, route: ActivatedRoute) {
@@ -35,9 +32,9 @@ export class DetailsCourseComponent implements OnInit {
       imageAlt: 'imageAlt',
       imageUrl: 'course_2.jpg',
       title: 'English Grammar',
-      courseName: '',
+      diplomaName: '',
       shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis',
-      courseDetails: {
+      diplomaDetails: {
         medias: [{type: 'image', title: 'String', alt: 'test-1.png', url: 'test-1.png'}, {
           type: 'image',
           title: 'String',
@@ -45,7 +42,7 @@ export class DetailsCourseComponent implements OnInit {
           url: 'test-1.png'
         }, {type: 'image', title: 'String', alt: 'test-1.png', url: 'test-1.png'}],
         reviews: [{memo: ''}],
-        courseDescription:
+        diplomaDescription:
           {
             title: 'Lorem ipsum dolor sit amet',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittisLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis'
@@ -88,20 +85,20 @@ export class DetailsCourseComponent implements OnInit {
         breadCrumb: [{label: 'reviews', linkTo: 'reviews'}, {
           label: 'curriculum',
           linkTo: 'curriculum'
-        }, {label: 'courseDescription', linkTo: 'courseDescription'}]
+        }, {label: 'courseDescription', linkTo: 'diplomaDescription'}]
       },
       category: 'Art & Design',
       price: 15000,
       rating: 4.3
     };
 
-    this.courseDetails.courseDetails['curriculum'].content = [...this.courseDetails.courseDetails['curriculum'].content.map((item) => ({
+    this.courseDetails.diplomaDetails['curriculum'].content = [...this.courseDetails.diplomaDetails['curriculum'].content.map((item) => ({
       ...item,
       expand: false
     }))];
 
-    this.courseDetails.courseDetails['breadCrumb'].forEach((item) => {
-      this.courseDetails.courseDetails[item.label].linkTo = item.linkTo;
+    this.courseDetails.diplomaDetails['breadCrumb'].forEach((item) => {
+      this.courseDetails.diplomaDetails[item.label].linkTo = item.linkTo;
     });
   }
 
@@ -118,7 +115,7 @@ export class DetailsCourseComponent implements OnInit {
         label: 'Courses',
         route: '/' + routes.courses
       },
-      ...this.courseDetails.courseDetails['breadCrumb']
+      ...this.courseDetails.diplomaDetails['breadCrumb']
     ];
     this._store.dispatch(new InitBreadcrumb({data: temp}));
   }
