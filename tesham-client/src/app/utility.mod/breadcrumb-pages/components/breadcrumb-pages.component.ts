@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select, } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
+import { SUPPORTED_LANG } from '../../lang-switcher/lang-switcher.component';
 
 export enum itemType {
   primary = 'PRIMARY',
@@ -14,9 +16,13 @@ export enum itemType {
 export class BreadcrumbPagesComponent implements OnInit {
   public breadcrumbData: any;
   public itemType = itemType;
+  public isArabicLang: boolean;
 
-  constructor(private _store: Store<{ breadcrumb: { data: any } }>) {
-
+  constructor(private langService: TranslateService, private _store: Store<{ breadcrumb: { data: any } }>) {
+    this.langService.onLangChange.subscribe((lang: any) => {
+      this.isArabicLang = lang.lang === SUPPORTED_LANG['en'].value;
+      console.log(lang.lang);
+    });
   }
 
   ngOnInit() {
@@ -24,7 +30,7 @@ export class BreadcrumbPagesComponent implements OnInit {
       if (data) {
         this.breadcrumbData = data && data.data;
       }
-    }).unsubscribe();
+    });
   }
 
   public onClickScrollTo(elementID: string) {

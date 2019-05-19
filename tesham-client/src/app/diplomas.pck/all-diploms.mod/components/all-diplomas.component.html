@@ -1,4 +1,4 @@
-<div class="container" *ngIf="diplomaList  && diplomaList.length > 0">
+<div class="te-full-container" *ngIf="diplomaList  && diplomaList.length > 0">
   <div class="row te-app-slider-wrapper">
     <te-app-ngx-agile-slider-container [sliderOptions]="{ loop: true, lazyLoading: false }">
       <te-app-ngx-agile-slider-item>
@@ -25,12 +25,12 @@
   </div>
   <div class="row">
     <te-app-page-header [pageTitle]="'Te-Sham Academy Courses'"></te-app-page-header>
-  <div class="row">
+  </div>
+  <div class=" container row">
     <ng-container *ngFor="let diploma of diplomaList; let _last = last;">
       <div class="col l4 m6 s12 course-widget" [ngClass]="{'hide-on-med-and-down': !!_last}">
         <te-app-diplom-card [route]="routes.diplomaDetail" [data]="diploma"></te-app-diplom-card>
       </div>
     </ng-container>
   </div>
-</div>
 </div>

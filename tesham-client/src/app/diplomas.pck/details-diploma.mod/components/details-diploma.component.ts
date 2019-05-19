@@ -16,7 +16,7 @@ import { DiplomaInterface } from '../../../core.mod/interfaces/diploma-data-Inte
   styleUrls: ['./details-diploma.component.scss']
 })
 export class DetailsDiplomaComponent implements OnInit {
-  public courseDetails: DiplomaInterface;
+  public diplomaDetails: DiplomaInterface;
   public courseCount: number;
 
   constructor(private _store: Store<BreadcrumbPagesState>, proxyService: ProxyService, route: ActivatedRoute) {
@@ -27,7 +27,7 @@ export class DetailsDiplomaComponent implements OnInit {
            this.courseDetails = response['courses'];
          });
          */
-    this.courseDetails = {
+    this.diplomaDetails = {
       id: 'fdfdfdffd',
       imageAlt: 'imageAlt',
       imageUrl: 'course_2.jpg',
@@ -85,20 +85,20 @@ export class DetailsDiplomaComponent implements OnInit {
         breadCrumb: [{label: 'reviews', linkTo: 'reviews'}, {
           label: 'curriculum',
           linkTo: 'curriculum'
-        }, {label: 'courseDescription', linkTo: 'diplomaDescription'}]
+        }, {label: 'diplomaDescription', linkTo: 'diplomaDescription'}]
       },
       category: 'Art & Design',
       price: 15000,
       rating: 4.3
     };
 
-    this.courseDetails.diplomaDetails['curriculum'].content = [...this.courseDetails.diplomaDetails['curriculum'].content.map((item) => ({
+    this.diplomaDetails.diplomaDetails['curriculum'].content = [...this.diplomaDetails.diplomaDetails['curriculum'].content.map((item) => ({
       ...item,
       expand: false
     }))];
 
-    this.courseDetails.diplomaDetails['breadCrumb'].forEach((item) => {
-      this.courseDetails.diplomaDetails[item.label].linkTo = item.linkTo;
+    this.diplomaDetails.diplomaDetails['breadCrumb'].forEach((item) => {
+      this.diplomaDetails.diplomaDetails[item.label].linkTo = item.linkTo;
     });
   }
 
@@ -115,7 +115,7 @@ export class DetailsDiplomaComponent implements OnInit {
         label: 'Courses',
         route: '/' + routes.courses
       },
-      ...this.courseDetails.diplomaDetails['breadCrumb']
+      ...this.diplomaDetails.diplomaDetails['breadCrumb']
     ];
     this._store.dispatch(new InitBreadcrumb({data: temp}));
   }

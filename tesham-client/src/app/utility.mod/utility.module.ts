@@ -12,6 +12,7 @@ import { ReadMoreComponent } from './read-more/components/read-more.component';
 import { BreadcrumbPagesComponent } from './breadcrumb-pages/components/breadcrumb-pages.component';
 import { breadcrumbReducer } from './breadcrumb-pages/store/breadcrumb-pages.reducer';
 import { PageHeaderComponent } from './page-header/page-header.component';
+import { LangSwitcherComponent } from './lang-switcher/lang-switcher.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageHeaderComponent } from './page-header/page-header.component';
     SocialIconsComponent,
     ReadMoreComponent,
     BreadcrumbPagesComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    LangSwitcherComponent
   ],
   exports: [
     TranslatePipe,
@@ -28,7 +30,8 @@ import { PageHeaderComponent } from './page-header/page-header.component';
     SocialIconsComponent,
     ReadMoreComponent,
     BreadcrumbPagesComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    LangSwitcherComponent
   ],
   imports: [
     CommonModule,

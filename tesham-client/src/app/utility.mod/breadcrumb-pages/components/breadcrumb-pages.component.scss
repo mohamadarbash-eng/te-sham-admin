@@ -18,14 +18,7 @@
         font-size: 14px;
         font-weight: 400;
         margin-right: -2px;
-        &:after {
-          content: 'keyboard_arrow_right';
-          font-family: Material Icons;
-          font-size: 18px;
-          padding-left: 8px;
-          padding-right: 8px;
-          vertical-align: middle;
-        }
+
 
         span {
           color: #391201;
@@ -39,7 +32,7 @@
       display: inline-block;
       font-size: 14px;
       font-weight: 400;
-      margin-right: -2px;
+      margin-right:  -2px;
       &:after {
         content: '|';
         padding-left: 8px;
@@ -61,6 +54,27 @@
     text-decoration: none;
     &:hover {
       text-decoration: #391201 underline;
+    }
+  }
+
+  .primary-before {
+    &:before {
+      content: 'keyboard_arrow_left';
+      font-family: Material Icons;
+      font-size: 18px;
+      padding-left: 8px;
+      padding-right: 8px;
+      vertical-align: middle;
+    }
+  }
+  .primary-after {
+    &:after {
+      content: 'keyboard_arrow_right';
+      font-family: Material Icons;
+      font-size: 18px;
+      padding-left: 8px;
+      padding-right: 8px;
+      vertical-align: middle;
     }
   }
 }

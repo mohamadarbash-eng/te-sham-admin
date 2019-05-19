@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="diplomaData && diplomaData.length > 0">
   <div class="row center"><h5><span class="te-title">Te-Sham Academy Diplomas</span></h5></div>
   <div class="row">
     <ng-container *ngFor="let diploma of diplomaData; let _last = last;">

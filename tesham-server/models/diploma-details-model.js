@@ -7,7 +7,8 @@ const diplomaDetailsSchema = Schema({
     medias: [{type: 'image' | 'video', title: String, alt: String, url: {type: String, default: null}}],
     diplomaDescription: {title: String, content: String},
     curriculum: {title: String, content: curriculumSchema},
-    reviews: [{type: Schema.Types.ObjectId, ref: 'Reviews'}]
+    reviews: [{type: Schema.Types.ObjectId, ref: 'Reviews'}],
+    breadCrumb: [{label: String, linkTo: 'diplomaDescription' | 'curriculum' | 'reviews'}]
 });
 
 

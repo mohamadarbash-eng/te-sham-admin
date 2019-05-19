@@ -1,7 +1,6 @@
 import { NgModule }             from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DetailsDiplomaComponent } from './components/details-diploma.component';
-import { routes as _routes } from '../../routes-model';
 
 const routes: Routes = [{
     path: '',

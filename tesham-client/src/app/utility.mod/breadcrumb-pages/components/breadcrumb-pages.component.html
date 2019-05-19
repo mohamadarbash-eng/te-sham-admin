@@ -2,13 +2,13 @@
   <ul class="container">
     <ng-container *ngFor="let element of  breadcrumbData; let _last = last">
       <li *ngIf="element && element.item === itemType.primary && !!element.route" class="te-breadcrumb-primary"
-          [ngClass]="{'last-element' : _last}">
+          [ngClass]="{'last-element' : _last, 'primary-before' : isArabicLang, 'primary-after': !isArabicLang}">
         <a [routerLink]="element.route">
           <span>{{element.label}}</span>
         </a>
       </li>
       <li *ngIf="element && element.item === itemType.primary && !!!element.route" class="te-breadcrumb-primary"
-          [ngClass]="{'last-element' : _last}">
+          [ngClass]="{'last-element' : _last, 'primary-before' : isArabicLang, 'primary-after': !isArabicLang}">
         <span>{{element.label}}</span>
       </li>
       <li *ngIf="element && !element.item  && !!element.linkTo" class="te-breadcrumb-secondary"

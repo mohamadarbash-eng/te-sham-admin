@@ -1,7 +1,7 @@
 <div class="te-full-container">
   <div class="row te-app-slider-wrapper">
     <te-app-ngx-agile-slider-container [sliderOptions]="{ loop: true, lazyLoading: false }">
-      <ng-container *ngFor="let item of courseDetails?.courseDetails?.medias">
+      <ng-container *ngFor="let item of diplomaDetails?.diplomaDetails?.medias">
         <te-app-ngx-agile-slider-item>
           <te-app-image-carousel [imgUrl]="'./../../assets/' + item.url">
           </te-app-image-carousel>
@@ -10,19 +10,19 @@
     </te-app-ngx-agile-slider-container>
   </div>
   <div class="row">
-    <te-app-page-header [pageTitle]="courseDetails?.title || 'HEALLO HEALLO  HEALLO'"></te-app-page-header>
+    <te-app-page-header [pageTitle]="diplomaDetails?.title || 'HEALLO HEALLO  HEALLO'"></te-app-page-header>
   </div>
-  <div class="container row" [id]="courseDetails.courseDetails.courseDescription.linkTo">
-    <div class="row eliminate-margin-bottom" *ngIf="courseDetails?.courseDetails?.courseDescription">
-      <h4 class="te-title">{{courseDetails.courseDetails.courseDescription.title}}</h4>
-      <p [innerHTML]="courseDetails.courseDetails.courseDescription.content"></p>
+  <div class="container row" [id]="diplomaDetails.diplomaDetails.diplomaDescription.linkTo">
+    <div class="row eliminate-margin-bottom" *ngIf="diplomaDetails?.diplomaDetails?.diplomaDescription">
+      <h4 class="te-title">{{diplomaDetails.diplomaDetails.diplomaDescription.title}}</h4>
+      <p [innerHTML]="diplomaDetails.diplomaDetails.diplomaDescription.content"></p>
     </div>
-    <div class="row" *ngIf="courseDetails?.courseDetails?.curriculum" [id]="courseDetails.courseDetails.curriculum.linkTo">
+    <div class="row" *ngIf="diplomaDetails?.diplomaDetails?.curriculum" [id]="diplomaDetails.diplomaDetails.curriculum.linkTo">
       <h4 class="te-title"
-          *ngIf="courseDetails?.courseDetails?.curriculum?.title">{{courseDetails?.courseDetails?.curriculum?.title}}</h4>
+          *ngIf="diplomaDetails?.diplomaDetails?.curriculum?.title">{{diplomaDetails?.diplomaDetails?.curriculum?.title}}</h4>
       <h6
-        *ngIf="courseDetails?.courseDetails?.curriculum?.subTitle">{{courseDetails?.courseDetails?.curriculum?.subTitle}}</h6>
-      <ul *ngFor="let item of courseDetails.courseDetails.curriculum.content">
+        *ngIf="diplomaDetails?.diplomaDetails?.curriculum?.subTitle">{{diplomaDetails?.diplomaDetails?.curriculum?.subTitle}}</h6>
+      <ul *ngFor="let item of diplomaDetails.diplomaDetails.curriculum.content">
         <li>
           <div (click)="onClickExpand(item)">
             <h4 class="te-list-title" [ngClass]="{'te-app-cursor-mouse': item.subCurriculum && item.subCurriculum.length > 0}" *ngIf="item.title">

@@ -1,0 +1,17 @@
+@import "../../../assets/util-scss/colors";
+
+.te-app-lang-switcher {
+  a {
+    cursor: pointer;
+    display: block;
+    color: $main-color !important;
+    font-size: 16px;
+    position: relative;
+    text-transform: uppercase;
+    padding: 18px 20px;
+    &:hover > span {
+      border-bottom: 2px solid $secondary-color;
+      padding-bottom: 5px
+    }
+  }
+}
