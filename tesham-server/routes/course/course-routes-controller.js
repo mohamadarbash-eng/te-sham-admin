@@ -1,5 +1,6 @@
 const Course = require('./../../models/course-model');
 const CourseDetails = require('./../../models/course-details-model');
+const Reveiws = require('./../../models/reviews-model');
 /**
  * CourseController Object, it contains Course Model's CRUDs
  * @type {{postCourse(*, *, *): void, getCourses(*, *, *): void, deleteCourse(*, *, *): void, updateCourse(*, *, *): void, getCourseByID(*, *, *): void}}
@@ -12,7 +13,6 @@ const courseController = {
 
         const courseModel = new Course({
             ...course,
-            imageUrl: req.file ? `/assets/images/${req.file.filename}` : null
         });
         courseModel.courseDetails = courseDetailsModel;
         // TODO use promise.all
@@ -33,7 +33,6 @@ const courseController = {
             courseQuery.skip(+offset).limit(+limit)
         }
         Promise.all([courseQuery, Course.estimatedDocumentCount()]).then((courses) => {
-            console.log(courses);
             res.status(200).json({
                 courses: courses[0],
                 totalCount: courses[1]
@@ -68,7 +67,7 @@ const courseController = {
     },
     getCourseDetails(req, res, next) {
         const {courseName} = req.params;
-        Course.findById(courseName).populate(
+        Course.findOne({courseName: courseName}).populate(
             {
                 path: 'courseDetails',
                 populate: {path: 'reviews'}
@@ -82,7 +81,6 @@ const courseController = {
     deleteCourse(req, res, next) {
         const {id} = req.params;
         Course.findByIdAndDelete(id).then((result) => {
-            console.log(result);
             res.status(200).json();
             next();
         })
@@ -102,7 +100,7 @@ const courseController = {
             rating: req.body.rating
         };
         Course.findByIdAndUpdate(id, courseData, {new: false}).then(() => {
-            res.status(200).json({error: null});
+            res.status(201).json({error: null});
             next();
         }).catch((error) => res.status(400).json({error}));
 

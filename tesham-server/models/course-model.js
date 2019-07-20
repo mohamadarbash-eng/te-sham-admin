@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
+const CourseDetails = require('./course-details-model');
 const Schema = mongoose.Schema;
 const courseSchema = Schema({
     imageAlt: String,
     imageUrl: { type: String, default: null },
+    imageTitle: { type: String, default: null },
     courseName: String,
     title: String,
     shortDescription: String,
-    courseDetails: { type: Schema.Types.ObjectId, ref: 'CourseDetails' },
+    courseDetails: { type: Schema.Types.ObjectId, ref: CourseDetails },
     category: String,
     price: Number,
     rating: String

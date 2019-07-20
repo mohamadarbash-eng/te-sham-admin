@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const reviewsSchema = Schema({
+const reviewsSchema = new Schema({
     courseDetailsRef: { type: Schema.Types.ObjectId, ref: 'CourseDetails'},
     userIdsRef: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     score: String,

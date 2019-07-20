@@ -1,6 +1,6 @@
 <div class="card course-card">
   <div class="card-image">
-    <img [src]="'http://localhost:3000' + course.imageUrl" [alt]="course.imageAlt">
+    <img [src]="'http://localhost:3000' + '/assets/images/' +course.imageUrl" [alt]="course.imageAlt">
     <a class="btn-floating halfway-fab waves-effect waves-light light-green"
        [routerLink]="['/' + route , course.courseName]"
     ><i class="material-icons">folder_open</i></a>

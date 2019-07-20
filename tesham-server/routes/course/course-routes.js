@@ -8,7 +8,7 @@ const router = express.Router();
 /**
  * Course restful API requests
  */
-router.post('/api/course', checkAuth,extractFile,courseController.postCourse);
+router.post('/api/course',extractFile,courseController.postCourse);
 router.get('/api/courses', courseController.getCourses);
 router.get('/api/course/:id', courseController.getCourseByID);
 router.delete('/api/course/:id',checkAuth, courseController.deleteCourse);

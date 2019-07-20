@@ -23,13 +23,14 @@ export class DetailsCourseComponent implements OnInit {
   public courseCount: number;
 
   constructor(private _store: Store<BreadcrumbPagesState>, proxyService: ProxyService, route: ActivatedRoute) {
-    /*   route.paramMap.pipe(
+       route.paramMap.pipe(
          switchMap((params: ParamMap) =>
-           proxyService.getProxy(API_PATH.COURSE_DETAILS_API, null, {id: params.get('courseName')})
+           proxyService.getProxy(API_PATH.COURSE_DETAILS_API, null, {courseName: params.get('courseName')})
        )).subscribe((response: CourseDataInterface) => {
-           this.courseDetails = response['courses'];
+         //  this.courseDetails = response['courses'];
+         console.log(response['courses']);
          });
-         */
+
     this.courseDetails = {
       id: 'fdfdfdffd',
       imageAlt: 'imageAlt',

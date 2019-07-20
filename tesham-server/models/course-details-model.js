@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const curriculumSchema = require('./sub-documents/curriculum-schema');
+const Reviews = require('./reviews-model');
 // TODO refactoring  review reference doc
 // TODO : restructure reviews to use virtual populate
 const Schema = mongoose.Schema;
-const courseDetailsSchema = Schema({
+const courseDetailsSchema = new Schema({
     medias: [{type: 'image' | 'video', title: String, alt: String, url: {type: String, default: null}}],
-    courseDescription: {title: String, content: String},
-    curriculum:  curriculumSchema,
-    reviews: [{type: Schema.Types.ObjectId, ref: 'Reviews'}],
+    courseDescription: String,
+    curriculum:  String,
+    reviews: [{type: Schema.Types.ObjectId, ref: Reviews}],
     breadCrumb: [{label: String, linkTo: 'courseDescription' | 'curriculum' | 'reviews'}]
 });
 
