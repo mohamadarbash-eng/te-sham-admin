@@ -19,7 +19,7 @@ export class SliderItemComponent implements AfterViewInit {
   @Input() additionalClasses: string[];
   @Input() width: string;
 
-  @ViewChild('sliderItem') sliderItem: ElementRef;
+  @ViewChild('sliderItem', { static: true }) sliderItem: ElementRef;
 
   /**
    * Called after the view was initialized. Adds the additional classes

@@ -15,18 +15,18 @@ export const appRoutes: Routes = [
   },
   {
     path: routes.courses,
-    loadChildren: './courses.pck/all-courses.mod/all-courses.module#AllCoursesModule'
+    loadChildren: () => import('./courses.pck/all-courses.mod/all-courses.module').then(m => m.AllCoursesModule)
   },
   {
     path: routes.diplomas,
-    loadChildren: './diplomas.pck/all-diploms.mod/all-diplomas.module#AllDiplomasModule'
+    loadChildren: () => import('./diplomas.pck/all-diploms.mod/all-diplomas.module').then(m => m.AllDiplomasModule)
   },
   {
     path: routes.courseDetail + '/:courseName',
-    loadChildren: './courses.pck/details-course.mod/details-course.module#DetailsCourseModule'
+    loadChildren: () => import('./courses.pck/details-course.mod/details-course.module').then(m => m.DetailsCourseModule)
   },
   {
     path: routes.diplomaDetail + '/:diplomaName',
-    loadChildren: './diplomas.pck/details-diploma.mod/details-diploma.module#DetailsDiplomaModule'
+    loadChildren: () => import('./diplomas.pck/details-diploma.mod/details-diploma.module').then(m => m.DetailsDiplomaModule)
   }
 ];

@@ -134,15 +134,15 @@ export class SliderContainerComponent implements AfterViewInit, OnDestroy {
   /**
    * div container ref
    */
-  @ViewChild('sliderContainer') container: ElementRef;
+  @ViewChild('sliderContainer', { static: true }) container: ElementRef;
   /**
    * div frame ref
    */
-  @ViewChild('sliderFrame') frame: ElementRef;
+  @ViewChild('sliderFrame', { static: true }) frame: ElementRef;
   /**
    * div unsorted list ref
    */
-  @ViewChild('sliderList') sliderList: ElementRef;
+  @ViewChild('sliderList', { static: true }) sliderList: ElementRef;
 
   /* class variables */
   public navigation = false;

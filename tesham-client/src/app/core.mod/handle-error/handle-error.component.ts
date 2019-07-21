@@ -8,7 +8,7 @@ declare const M;
 })
 
 export class HandleErrorComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('modal') modal: ElementRef;
+  @ViewChild('modal', { static: true }) modal: ElementRef;
   public modalInstance;
   constructor() {
   }
