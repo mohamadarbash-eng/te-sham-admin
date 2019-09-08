@@ -13,7 +13,7 @@ export class AllCourses extends React.Component<any> {
                 if (data) {
                     courses = data.courses.map((course: any) => {
                         return (
-                            <div className='col s12 m4'>
+                            <div className='col s12 m4' key={course.id}>
                                 <div className='card'>
                                     <div className='card-image'>
                                         <img src={DATA_BANK + API_PATH.IMAGE + course.imageUrl}/>
