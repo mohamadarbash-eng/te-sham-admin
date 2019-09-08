@@ -3,7 +3,6 @@ import React from 'react';
 
 
 export const Input: React.FC<any> = (props: any) => {
-    console.log(props.config.valid.message)
     const error =
         <span  className={props.config.valid && !props.config.valid.value? 'invalid' : 'validate'}>
                     {props.config.valid.message}</span>;

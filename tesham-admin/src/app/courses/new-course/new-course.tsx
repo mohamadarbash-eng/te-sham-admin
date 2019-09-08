@@ -240,6 +240,9 @@ export default class NewCourse extends Component {
 
     }
 
+    componentDidMount(): void {
+        M.updateTextFields()
+    }
 
     public saveCourse(): void {
         let formData: { [key: string]: string } = {};
@@ -279,7 +282,7 @@ export default class NewCourse extends Component {
         const fileReader  = new FileReader();
         //this.handleChangeFormControls(name, files[0]);
         formData.append('image', files[0]);
-        Axios.post('http://localhost:3000/api/image', formData).then((data) => {
+        Axios.post('/api/image', formData).then((data) => {
             this.setState(() => {
                 return {
                     formControls: {
@@ -428,6 +431,9 @@ export default class NewCourse extends Component {
 
         return (
             <div className='container'>
+                <div className='row'>
+                    <h5 className='title'>New Course</h5>
+                </div>
                 <div className="row">
                     <Input config={this.state.formControls.courseName}
                            changed={(event: any) => this.handleChangeText(event)}/>

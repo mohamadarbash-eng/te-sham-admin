@@ -1,0 +1,9 @@
+.teAppMain {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+.teAppMain {
+    padding-left: 0;
+  }
+}
