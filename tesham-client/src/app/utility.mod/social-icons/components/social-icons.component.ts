@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { SocialIconsInterfaces }    from '../interfaces/social-icons-interfaces';
+import { Component, Input } from '@angular/core';
+import { SocialIconsInterfaces } from '../interfaces/social-icons-interfaces';
 
 @Component({
   selector: 'te-app-social-icons',

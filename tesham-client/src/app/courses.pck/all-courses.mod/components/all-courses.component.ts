@@ -8,6 +8,7 @@ import {
   CourseInterface
 } from '../../../core.mod/interfaces/course-data-Interface.interface';
 import { routes } from '../../../routes-model';
+
 @Component({
   selector: 'te-app-all-courses-widget',
   templateUrl: './all-courses.component.html',

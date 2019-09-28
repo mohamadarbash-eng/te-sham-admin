@@ -20,7 +20,7 @@ export class HandleErrorService implements ErrorHandler {
 
 
 /*
-
+// TODO use it above
 log(error) {
     // Log the error to the console
     console.error(error);

@@ -6,7 +6,7 @@ import { FormsModule }           from '@angular/forms';
 import { UtilityModule }         from '../utility.mod/utility.module';
 import { WhyWeWidgetComponent }   from './why-we-widget/components/why-we-widget.component';
 import { EventWidgetComponent }   from './event-widget/components/event-widget.component';
-import { DiplomWidgetComponent }  from './diplom-widget/components/diplom-widget.component';
+import { DiplomaWidgetComponent }  from './diplom-widget/components/diploma-widget.component';
 import { SharedModule } from '../shared.mod/shared.module';
 import { RouterModule } from '@angular/router';
 // App
@@ -17,13 +17,13 @@ import { RouterModule } from '@angular/router';
     WhyWeWidgetComponent,
     EventWidgetComponent,
     CourseWidgetComponent,
-    DiplomWidgetComponent,
+    DiplomaWidgetComponent,
   ],
   exports: [
     CourseWidgetComponent,
     WhyWeWidgetComponent,
     EventWidgetComponent,
-    DiplomWidgetComponent
+    DiplomaWidgetComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 declare const M;
 
 @Component({
@@ -7,14 +7,9 @@ declare const M;
   styleUrls: ['./handle-error.component.scss']
 })
 
-export class HandleErrorComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('modal', { static: true }) modal: ElementRef;
+export class HandleErrorComponent implements  AfterViewInit, OnDestroy {
+  @ViewChild('modal', { static: false }) modal: ElementRef;
   public modalInstance;
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   ngAfterViewInit(): void {
   this.modalInstance = M.Modal.init(this.modal.nativeElement);

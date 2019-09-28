@@ -8,11 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AppVersionComponent implements OnInit {
   @Input() appVersion: string;
   _appVersion: string;
-  constructor() {
-  }
 
   ngOnInit() {
     this._appVersion = 'Version: 1.0.0';
   }
-
 }

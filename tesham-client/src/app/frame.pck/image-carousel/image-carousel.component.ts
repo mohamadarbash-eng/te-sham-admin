@@ -1,18 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'te-app-image-carousel',
   templateUrl: './image-carousel.component.html',
   styleUrls: ['./image-carousel.component.scss']
 })
-export class ImageCarouselComponent implements OnInit {
+export class ImageCarouselComponent {
   @Input('imgUrl') src: string;
   @Input('imgTitle') title: string;
   @Input('imgAlt') alt: string;
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }

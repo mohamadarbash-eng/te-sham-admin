@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DiplomWidgetComponent } from './diplom-widget.component';
+import { DiplomaCardComponent } from './diploma-card.component';
 
-describe('DiplomWidgetComponent', () => {
-  let component: DiplomWidgetComponent;
-  let fixture: ComponentFixture<DiplomWidgetComponent>;
+describe('DiplomCardComponent', () => {
+  let component: DiplomaCardComponent;
+  let fixture: ComponentFixture<DiplomaCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DiplomWidgetComponent ]
+      declarations: [ DiplomaCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DiplomWidgetComponent);
+    fixture = TestBed.createComponent(DiplomaCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

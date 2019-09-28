@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AllDiplomasRoutingModule } from './all-diplomas-routing.module';
-import { FormsModule }             from '@angular/forms';
-import { UtilityModule }           from '../../utility.mod/utility.module';
-import { NgxAgileSliderModule }    from '../../ngx-agile-slider.mod/ngx-agile-slider.module';
-import { WidgetsModule }           from '../../widgets.mod/widgets.module';
+import { FormsModule } from '@angular/forms';
+import { UtilityModule } from '../../utility.mod/utility.module';
+import { NgxAgileSliderModule } from '../../ngx-agile-slider.mod/ngx-agile-slider.module';
+import { WidgetsModule } from '../../widgets.mod/widgets.module';
 import { SharedModule } from '../../shared.mod/shared.module';
 import { AllDiplomasComponent } from './components/all-diplomas.component';
-import { AllCoursesRoutingModule } from '../../courses.pck/all-courses.mod/all-courses-routing.module';
 import { FrameModule } from '../../frame.pck/frame.module';
 
 @NgModule({

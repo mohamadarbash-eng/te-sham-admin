@@ -1,12 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { API_PATH, ProxyService } from '../../proxy/services/proxy.service';
 import { Store } from '@ngrx/store';
 import { AuthenticateAction } from '../../store/authenticate.action';
 import { AuthenticateState } from '../../store/authenticate.reducer';
-import { catchError } from 'rxjs/operators';
-import { HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
 
 
 @Component({
@@ -14,7 +11,7 @@ import { throwError } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   public loginFormGroup: FormGroup;
   // TODO validation
   constructor(private proxyService: ProxyService, private store: Store<AuthenticateState>) {
@@ -22,13 +19,8 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null),
       password: new FormControl(null)
     });
-
-
-
   }
 
-  ngOnInit() {
-  }
   public onClickSubmit(): void {
  // TODO add ? validation && crypt password
     this.proxyService.postProxy(API_PATH.LOGIN_USER, {
@@ -42,7 +34,5 @@ export class LoginComponent implements OnInit {
       return;
     }
     });
-
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CourseDataInterface, CourseInterface } from '../../../core.mod/interfaces/course-data-Interface.interface';
 import { API_PATH, ProxyService } from '../../../core.mod/proxy/services/proxy.service';
 import { routes } from '../../../routes-model';
@@ -9,7 +9,7 @@ import { routes } from '../../../routes-model';
   templateUrl: './course-widget.component.html',
   styleUrls: ['./course-widget.component.scss']
 })
-export class CourseWidgetComponent implements OnInit {
+export class CourseWidgetComponent {
   @Input() courseList: Partial<CourseInterface>[];
   @Input() withRuler = false;
   public router = routes;
@@ -20,9 +20,4 @@ export class CourseWidgetComponent implements OnInit {
         this.courseList = response['courses'];
       });
   }
-
-  ngOnInit() {
-
-  }
-
 }

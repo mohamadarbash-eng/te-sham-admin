@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 export const SUPPORTED_LANG: { [key: string]: {[key: string]: string }} = {
@@ -11,14 +11,11 @@ export const SUPPORTED_LANG: { [key: string]: {[key: string]: string }} = {
   templateUrl: './lang-switcher.component.html',
   styleUrls: ['./lang-switcher.component.scss']
 })
-export class LangSwitcherComponent implements OnInit {
+export class LangSwitcherComponent {
   public lang: { [key: string]: string };
 
   constructor(private translate: TranslateService) {
     this.lang = SUPPORTED_LANG[this.translate.currentLang];
-  }
-
-  ngOnInit() {
   }
 
   public onSwitchLang(): void {

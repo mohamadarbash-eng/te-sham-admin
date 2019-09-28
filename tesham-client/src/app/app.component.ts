@@ -8,8 +8,6 @@ import { TranslateAppService } from './core.mod/translate/services/translate-app
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tesham-client';
-
   constructor(private translateAppService: TranslateAppService) {
     this.translateAppService.prepareLang();
   }
