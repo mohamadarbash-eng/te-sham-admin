@@ -1,10 +1,7 @@
 const Course = require('./../../models/course-model');
 const CourseDetails = require('./../../models/course-details-model');
 const Reveiws = require('./../../models/reviews-model');
-/**
- * CourseController Object, it contains Course Model's CRUDs
- * @type {{postCourse(*, *, *): void, getCourses(*, *, *): void, deleteCourse(*, *, *): void, updateCourse(*, *, *): void, getCourseByID(*, *, *): void}}
- */
+
 const courseController = {
     postCourse(req, res, next) {
         const course = req.body;
@@ -90,6 +87,7 @@ const courseController = {
         const {id} = req.params;
         const imageUrl = req.file ? `/assets/images/${req.file.filename}`
             : req.body.imageUrl;
+        const courseDetails = req.body && req.body.courseDetails;
         const courseData = {
             imageUrl,
             imageAlt: req.body.imageAlt,
@@ -99,9 +97,11 @@ const courseController = {
             price: req.body.price,
             rating: req.body.rating
         };
-        Course.findByIdAndUpdate(id, courseData, {new: false}).then(() => {
-            res.status(201).json({error: null});
-            next();
+        Course.findByIdAndUpdate(id, courseData, {new: true}).then((course) => {
+            CourseDetails.findByIdAndUpdate(course.courseDetails, courseDetails).then(() => {
+                res.status(201).json({error: null});
+                next();
+            });
         }).catch((error) => res.status(400).json({error}));
 
     }

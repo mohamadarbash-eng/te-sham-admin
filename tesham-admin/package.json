@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@types/draft-js": "^0.10.32",
+    "@types/html-to-draftjs": "^1.4.0",
     "@types/jest": "24.0.13",
+    "@types/lodash": "^4.14.139",
     "@types/node": "12.0.2",
     "@types/react": "16.8.18",
     "@types/react-dom": "16.8.4",
@@ -18,6 +20,7 @@
     "draftjs-to-html": "^0.8.4",
     "html-to-draftjs": "^1.4.0",
     "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.15",
     "materialize-css": "^1.0.0-rc.2",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",

@@ -3,7 +3,7 @@ import Axios from 'axios'
 import { API_PATH, DATA_BANK } from '../../core.mod/proxy-service/proxy-service';
 import { Link } from 'react-router-dom';
 
-export class AllCourses extends React.Component<any> {
+export default class AllCourses extends React.Component<any> {
     public state: { [key: string]: string } = {};
 
     componentDidMount(): void {

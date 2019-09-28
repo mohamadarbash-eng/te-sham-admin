@@ -12,7 +12,7 @@ router.post('/api/course',extractFile,courseController.postCourse);
 router.get('/api/courses', courseController.getCourses);
 router.get('/api/course/:id', courseController.getCourseByID);
 router.delete('/api/course/:id',checkAuth, courseController.deleteCourse);
-router.put('/api/course/:id', checkAuth, extractFile, courseController.updateCourse);
+router.put('/api/course/:id', extractFile, courseController.updateCourse);
 router.get('/api/courses/count', courseController.getCoursesCount);
 router.get('/api/course/details/:courseName', courseController.getCourseDetails);
 
