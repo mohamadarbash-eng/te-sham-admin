@@ -2,7 +2,6 @@ import React from 'react';
 import Axios from 'axios';
 import  AbstractCourseDetails  from '../abstract-course-details';
 import { cloneDeep } from 'lodash';
-import { itemType } from '../../../../../tesham-client/src/app/utility.mod/breadcrumb-pages/components/breadcrumb-pages.component';
 
 export default class EditCourse extends AbstractCourseDetails {
 public courseID: string = '';

@@ -3,7 +3,7 @@
   <div class="row">
     <ng-container *ngFor="let diploma of diplomaData; let _last = last;">
       <div class="col l4 m6 s12 course-widget" [ngClass]="{'hide-on-med-and-down': !!_last}">
-        <te-app-diplom-card [route]="router.diplomaDetail" [data]="diploma"></te-app-diplom-card>
+        <te-app-diploma-card [route]="router.diplomaDetail" [data]="diploma"></te-app-diploma-card>
       </div>
     </ng-container>
   </div>
