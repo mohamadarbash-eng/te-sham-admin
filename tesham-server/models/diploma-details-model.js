@@ -5,12 +5,15 @@ const curriculumSchema = require('./sub-documents/curriculum-schema');
 const Schema = mongoose.Schema;
 const diplomaDetailsSchema = Schema({
     medias: [{type: 'image' | 'video', title: String, alt: String, url: {type: String, default: null}}],
-    diplomaDescription: {title: String, content: String},
-    curriculum: {title: String, content: curriculumSchema},
+    diplomaDescription: String,
+    curriculum: String,
     reviews: [{type: Schema.Types.ObjectId, ref: 'Reviews'}],
     breadCrumb: [{label: String, linkTo: 'diplomaDescription' | 'curriculum' | 'reviews'}]
 });
-
+ /*
+    diplomaDescription: {title: String, content: String},
+    curriculum: {title: String, content: curriculumSchema},
+  */
 
 diplomaDetailsSchema.set('toJSON', {
     virtuals: true

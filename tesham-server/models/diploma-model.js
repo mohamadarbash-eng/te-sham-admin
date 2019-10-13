@@ -1,16 +1,21 @@
 const mongoose = require('mongoose');
+const DiplomaDetails = require('./diploma-details-model');
+const uniqueValidator = require('mongoose-unique-validator');
+
+
 const Schema = mongoose.Schema;
 const diplomaSchema = Schema({
+    diplomaName: { type: String, required: true, unique: true },
     imageAlt: String,
     imageUrl: { type: String, default: null },
-    diplomaName: String,
+    imageTitle: { type: String, default: null },
     title: String,
     shortDescription: String,
-    diplomaDetails: { type: Schema.Types.ObjectId, ref: 'DiplomaDetails' },
+    diplomaDetails: { type: Schema.Types.ObjectId, ref: DiplomaDetails },
     category: String,
     price: Number,
     rating: String
-});
+},{timestamps: true});
 
 
 diplomaSchema.set('toJSON', {
@@ -27,5 +32,6 @@ diplomaSchema.methods.toJSON = function () {
     return courseObject;
 };
 
+diplomaSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('Diploma', diplomaSchema);

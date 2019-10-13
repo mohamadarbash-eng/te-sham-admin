@@ -8,12 +8,10 @@ const diplomaController = {
     postDiploma(req, res, next) {
         const diploma = req.body;
         const diplomaDetails = req.body && req.body.diplomaDetails;
+        console.log(diplomaDetails);
         const diplomaDetailsModel = new DiplomaDetails({...diplomaDetails});
+        const diplomaModel = new Diploma({...diploma});
 
-        const diplomaModel = new Diploma({
-            ...diploma,
-            imageUrl: req.file ? `/assets/images/${req.file.filename}`: null
-        });
         diplomaModel.diplomaDetails = diplomaDetailsModel;
        // TODO use promise.all
        Promise.all([diplomaModel.save(), diplomaDetailsModel.save()]).then((data) => {
@@ -66,8 +64,10 @@ const diplomaController = {
         }).catch((error) => res.status(400).json({error}));
     },
     getDiplomaDetails(req, res, next) {
-        const {id} = req.params;
-        Diploma.findById(id).populate('diplomaDetails').then((diploma) => {
+        const {diplomaName} = req.params;
+        console.log(diplomaName);
+        Diploma.findOne({diplomaName: diplomaName}).populate('diplomaDetails').then((diploma) => {
+            console.log(diploma);
             res.status(200).json(
                 diploma
             );

@@ -8,12 +8,12 @@ const router = express.Router();
 /**
  * Diplomas restful API requests
  */
-router.post('/api/diploma', checkAuth, extractFile, diplomaController.postDiploma);
+router.post('/api/diploma', extractFile, diplomaController.postDiploma);
 router.get('/api/diplomas', diplomaController.getDiplomas);
 router.get('/api/diploma/:id', diplomaController.getDiplomaByID);
 router.delete('/api/diploma/:id', checkAuth, diplomaController.deleteDiploma);
-router.put('/api/diploma/:id', checkAuth, extractFile, diplomaController.updateDiploma);
+router.put('/api/diploma/:id', extractFile, diplomaController.updateDiploma);
 router.get('/api/diplomas/count', diplomaController.getDiplomasCount);
-router.get('/api/diploma/details/:id', diplomaController.getDiplomaDetails);
+router.get('/api/diploma/details/:diplomaName', diplomaController.getDiplomaDetails);
 
 module.exports = router;
