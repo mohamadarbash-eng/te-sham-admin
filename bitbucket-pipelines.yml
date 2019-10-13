@@ -19,6 +19,7 @@ definitions:
           - sonar
         script:
           - npm install # Build your project and run
+          - npm test # Build your project and run
           - npm run
           - npm build
           - pipe: sonarsource/sonarcloud-scan:1.0.1
