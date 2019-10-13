@@ -9,15 +9,15 @@ export class Dashboard extends React.Component<any> {
     public state: any;
 
     componentDidMount(): void {
-        const elems = document.querySelectorAll('.sidenav');
-        const instances = M.Sidenav.init(elems);
+        const sidenav = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(sidenav);
     }
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         return (<div>
                 <nav className={Styles.teAppMain}>
                     <div className='nav-wrapper'>
-                        <a href='#' className='brand-logo'>Logo</a>
+                        <Link to='/' className='brand-logo'>Logo</Link>
                         <ul id='nav-mobile' className='right hide-on-med-and-down'>
                             <li><a href='sass.html'>Sass</a></li>
                         </ul>
@@ -27,7 +27,6 @@ export class Dashboard extends React.Component<any> {
                     <li>
                         <div className='user-view'>
                             <div className='background'>
-                                <img src='images/office.jpg'/>
                             </div>
                             <a href='#email'><span className='white-text email'>jdandturk@gmail.com</span></a>
                         </div>
@@ -38,6 +37,8 @@ export class Dashboard extends React.Component<any> {
                     </li>
                     <li><Link to='/new-course'>New Course</Link></li>
                     <li><Link to='/all-courses'>All Courses</Link></li>
+                    <li><Link to='/new-diploma'>New Diploma</Link></li>
+                    <li><Link to='/all-diplomas'>All Diplomas</Link></li>
                 </ul>
                 <div className={Styles.teAppMain}>
                     <Main></Main>

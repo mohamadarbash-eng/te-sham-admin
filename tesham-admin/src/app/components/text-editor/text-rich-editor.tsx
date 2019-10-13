@@ -7,21 +7,21 @@ import { stateToHTML } from 'draft-js-export-html';
 import htmlToDraft from 'html-to-draftjs';
 
 
-export default class TextRichEditor extends Component<any>{
-    public state = { editorState: EditorState.createEmpty()}
+export default class TextRichEditor extends Component<any> {
+    public state = {editorState: EditorState.createEmpty()}
 
- componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<{}>, snapshot?: any): void {
-if (prevProps.htmlText !== this.props.htmlText) {
-    const contentBlock = htmlToDraft(this.props.htmlText);
-    if (contentBlock && !!this.props.htmlText) {
-        const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
-        const editorState = EditorState.createWithContent(contentState);
-        this.setState( {
-            editorState,
-        });
+    componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<{}>, snapshot?: any): void {
+        if (prevProps.htmlText !== this.props.htmlText) {
+            const contentBlock = htmlToDraft(this.props.htmlText);
+            if (contentBlock && !!this.props.htmlText) {
+                const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
+                const editorState = EditorState.createWithContent(contentState);
+                this.setState({
+                    editorState,
+                });
+            }
+        }
     }
-}
- }
 
     public onEditorStateChange: any = (editorState: any) => {
         const html = stateToHTML(editorState.getCurrentContent());

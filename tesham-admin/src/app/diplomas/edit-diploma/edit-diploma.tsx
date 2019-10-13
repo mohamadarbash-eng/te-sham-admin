@@ -1,20 +1,22 @@
 import Axios from 'axios';
-import AbstractCourseDetails from '../abstract-course-details';
+import AbstractDiplomaDetails from '../abstract-diploma-details';
 import { cloneDeep } from 'lodash';
 import { API_PATH } from '../../core.mod/proxy-service/proxy-service';
+import { DiplomaInterface } from '../interfaces/diploma-interfaces';
 
 declare const M: any;
 
-export default class EditCourse extends AbstractCourseDetails {
-    public courseID: string = '';
+export default class EditDiploma extends AbstractDiplomaDetails {
+    public diplomaID: DiplomaInterface['id'] = '';
 
     componentDidMount(): void {
         this.setState({
             saveButtonLabel: 'Update',
-            pageTitle: 'Edit Course'
+            pageTitle: 'Edit Diploma'
         });
-        Axios.get( API_PATH.COURSE_DETAILS + (this.props as any).match.params.courseName).then(({data}) => {
-            this.courseID = data.id;
+        Axios.get<DiplomaInterface>(API_PATH.EDIT_DIPLOMA + (this.props as any).match.params.diplomaName).then(({data}) => {
+            this.diplomaID = data.id;
+            console.log(data);
             // TODO fix it
             let formControls = cloneDeep(this.state.formControls);
             for (const item in data) {
@@ -28,7 +30,7 @@ export default class EditCourse extends AbstractCourseDetails {
                     }
                 } else {
                     for (const control in formControls) {
-                        if (formControls[item] && formControls[item].value !== undefined && control) {
+                        if (formControls[item] && formControls[item].value !== undefined) {
                             formControls[item].value = data[item];
                         }
                     }
@@ -38,12 +40,13 @@ export default class EditCourse extends AbstractCourseDetails {
                 formControls: formControls
             })
         });
-
     }
+
 
     componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<{}>, snapshot?: any): void {
         M.updateTextFields();
     }
+
 
     public spreadData(formControl: any, nestedData: any): any {
         for (const nestedItem in nestedData) {
@@ -55,9 +58,9 @@ export default class EditCourse extends AbstractCourseDetails {
     }
 
     public saveCourse(): void {
-        if (this.courseID) {
-            Axios.put('/api/course/' + this.courseID, this.mapCourseData()).then((data) => {
-                // TODO handel the response / or error
+        if (this.diplomaID) {
+            Axios.put('/api/diploma/' + this.diplomaID, this.mapCourseData()).then((data) => {
+               // TODO handel the response / or error
             })
         }
     }

@@ -1,17 +1,10 @@
-import React from 'react';
-
 import Axios from 'axios';
-import AbstractCourseDetails  from '../abstract-course-details';
+import AbstractCourseDetails from '../abstract-course-details';
+import { API_PATH } from '../../core.mod/proxy-service/proxy-service';
 
 
+export default class NewCourse extends AbstractCourseDetails {
 
-// abstract
-
-export default class NewCourse extends AbstractCourseDetails  {
-
-    constructor(props: any) {
-        super(props);
-    }
     componentDidMount(): void {
         this.setState({
             saveButtonLabel: 'Save', pageTitle: 'Create new Course'
@@ -19,7 +12,7 @@ export default class NewCourse extends AbstractCourseDetails  {
     }
 
     public saveCourse(): void {
-        Axios.post('/api/course', this.mapCourseData()).then((data) => {
+        Axios.post(API_PATH.NEW_COURSE, this.mapCourseData()).then((data) => {
             console.log(data)
         })
     }

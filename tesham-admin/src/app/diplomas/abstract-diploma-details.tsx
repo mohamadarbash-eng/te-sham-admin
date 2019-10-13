@@ -6,16 +6,16 @@ import SelectImage from '../components/image/select-image';
 import TextRichEditor from '../components/text-editor/text-rich-editor';
 import { validatorsControl } from '../core.mod/vaidators/validators-control';
 import { formControlsValidator } from '../core.mod/vaidators/validators';
-import { NEW_COURSE_CONTROLS } from '../core.mod/vaidators/new-course-controls';
 import { cloneDeep } from 'lodash';
+import { NEW_DIPLOMA_CONTROLS } from '../core.mod/vaidators/new-diploma-controls';
 
 declare const M: any;
 
 
-export default abstract class AbstractCourseDetails extends Component {
+export default abstract class AbstractDiplomaDetails extends Component {
     public state: any = {
         formControls: {
-            ...cloneDeep(NEW_COURSE_CONTROLS),
+            ...cloneDeep(NEW_DIPLOMA_CONTROLS),
         },
         formValid: false,
         previewImage: null,
@@ -24,8 +24,9 @@ export default abstract class AbstractCourseDetails extends Component {
         pageTitle: null
     };
     public instance: any;
+
     /**
-     * saveCourse will save newCourse or update existing course
+     * saveCourse will save newCourse or update existing diploma
      */
     public abstract saveCourse(): void;
 
@@ -220,7 +221,7 @@ export default abstract class AbstractCourseDetails extends Component {
                     <h5 className='title'>{this.state.pageTitle}</h5>
                 </div>
                 <div className="row">
-                    <Input config={this.state.formControls.courseName}
+                    <Input config={this.state.formControls.diplomaName}
                            changed={(event: any) => this.handleChangeText(event)}/>
                     <Input config={this.state.formControls.title}
                            changed={(event: any) => this.handleChangeText(event)}/>
@@ -252,9 +253,9 @@ export default abstract class AbstractCourseDetails extends Component {
                 <label>Description</label>
                 <div className="row">
                     <TextRichEditor
-                        htmlText={this.state.formControls.courseDetails.courseDescription.value}
+                        htmlText={this.state.formControls.diplomaDetails.diplomaDescription.value}
                         changed={(event: any) => {
-                            this.handleChangeSubFormControls('courseDescription', event, 'courseDetails')
+                            this.handleChangeSubFormControls('diplomaDescription', event, 'diplomaDetails')
                         }}>
                     </TextRichEditor>
                 </div>
@@ -262,9 +263,9 @@ export default abstract class AbstractCourseDetails extends Component {
                 <div className="row">
                     <label>curriculum</label>
                     <TextRichEditor
-                        htmlText={this.state.formControls.courseDetails.curriculum.value}
+                        htmlText={this.state.formControls.diplomaDetails.curriculum.value}
                         changed={(event: any) => {
-                            this.handleChangeSubFormControls('curriculum', event, 'courseDetails')
+                            this.handleChangeSubFormControls('curriculum', event, 'diplomaDetails')
                         }}>
                     </TextRichEditor>
                 </div>
