@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41a85f6-7a99-4d13-87aa-dacf8fddd8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/core.mod/error-handler/error-page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/courses/all-courses/all-courses.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/diplomas/all-diplomas/all-diplomas.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitbucket-pipelines.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/courses/abstract-course-details.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/abstract-course-details.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/courses/all-courses/all-courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/all-courses/all-courses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/courses/edit-course/edit-course.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/edit-course/edit-course.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/courses/new-course/new-course.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/new-course/new-course.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/diplomas/all-diplomas/all-diplomas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/diplomas/all-diplomas/all-diplomas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/main.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,46 +30,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>te-app-course-card</find>
-      <find>CourseDataInterface</find>
-      <find>WidgetsModule</find>
-      <find>SharedModule</find>
-      <find>ProxyService</find>
-      <find>'authentication'</find>
-      <find>AllCoursesComponent</find>
-      <find>materiali</find>
-      <find>import &quot;materialize-css&quot;;</find>
-      <find>app-root</find>
-      <find>js/materialize.js</find>
-      <find>root</find>
-      <find>'bcrypt</find>
-      <find>assets/images</find>
-      <find>.API_URL</find>
-      <find>[routerLink]</find>
-      <find>MainModule</find>
-      <find>PageHeaderComponent</find>
-      <find>course</find>
-      <find>Course</find>
-      <find>icons</find>
-      <find>te-app-icon-medium</find>
-      <find>courseName</find>
-      <find>courseName: String,</find>
-      <find>DiplomaInterface</find>
-      <find>te-app-diplom-card</find>
-      <find>&lt;te-app-diplom-card</find>
-      <find>&lt;te-app-course-card</find>
-      <find>diplomaData</find>
-      <find>te-app-diplom-widget</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>te-app-ngx-agile-slider-item</replace>
-      <replace>&lt;/te-app-ngx-agile-slider-item&gt;</replace>
-      <replace>'</replace>
-      <replace>Diploma</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -67,27 +39,30 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.tslint" value="D:\my-library\te-sham-academy\tesham-client\node_modules\tslint" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="D:/my-library/te-sham-academy/tesham-client/node_modules/tslint" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
-    <property name="ts.external.directory.path" value="D:\my-library\te-sham-academy\tesham-client\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.circleci" />
+      <recent name="D:\my-library\te-sham-academy\tesham-server\routes\course" />
+      <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\frame.pck" />
+      <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\core.mod" />
+      <recent name="D:\my-library\te-sham-academy\tesham-server" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\diplomas.pck\details-diplom.mod" />
       <recent name="D:\my-library\te-sham-academy\tesham-server\models" />
       <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\courses.pck\details-course.mod" />
       <recent name="D:\my-library\te-sham-academy\tesham-server\routes\diploma" />
       <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\core.mod\interfaces" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\my-library\te-sham-academy\tesham-server\routes\course" />
-      <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\frame.pck" />
-      <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\core.mod" />
-      <recent name="D:\my-library\te-sham-academy\tesham-server" />
-      <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\core.mod\handle-error" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,7 +77,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.test">
     <configuration name="SocialIconsComponent" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
       <config-file value="$PROJECT_DIR$/tesham-client/src/karma.conf.js" />
       <karma-package-dir value="$PROJECT_DIR$/tesham-client/node_modules/@angular/cli" />
@@ -135,8 +110,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.test" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
         <item itemvalue="Karma.SocialIconsComponent" />
@@ -200,6 +186,13 @@
       <workItem from="1558212585379" duration="5067000" />
       <workItem from="1570984787269" duration="31000" />
       <workItem from="1571526885681" duration="176000" />
+      <workItem from="1571767700181" duration="1534000" />
+      <workItem from="1571854329987" duration="414000" />
+      <workItem from="1573744965716" duration="32000" />
+      <workItem from="1573922060685" duration="8616000" />
+      <workItem from="1573994910798" duration="692000" />
+      <workItem from="1574279039744" duration="2047000" />
+      <workItem from="1574283249280" duration="372000" />
     </task>
     <servers />
   </component>

@@ -6,6 +6,7 @@ import EditCourse from '../courses/edit-course/edit-course';
 import NewDiploma from '../diplomas/new-diploma/new-diploma';
 import AllDiplomas from '../diplomas/all-diplomas/all-diplomas';
 import EditDiploma from '../diplomas/edit-diploma/edit-diploma';
+import ErrorPage from '../core.mod/error-handler/error-page';
 
 
 export default class Main extends Component {
@@ -21,6 +22,7 @@ export default class Main extends Component {
                     <Route path='/new-diploma' exact component={NewDiploma}/>
                     <Route path='/all-diplomas' component={AllDiplomas}/>
                     <Route path='/edit-diploma/:diplomaName' component={EditDiploma}/>
+                    <Route path='/error-page' component={ErrorPage}/>
                 </Switch>
             </div>
         );

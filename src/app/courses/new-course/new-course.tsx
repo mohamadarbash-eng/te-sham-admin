@@ -7,13 +7,15 @@ export default class NewCourse extends AbstractCourseDetails {
 
     componentDidMount(): void {
         this.setState({
-            saveButtonLabel: 'Save', pageTitle: 'Create new Course'
+            saveButtonLabel: 'Save', pageTitle: 'Create new Course', isDeletable: false
         });
     }
 
     public saveCourse(): void {
         Axios.post(API_PATH.NEW_COURSE, this.mapCourseData()).then((data) => {
-            console.log(data)
+            (this.props as any).history.push('/all-courses')
         })
+    }
+    public deleteCourse(): void {
     }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios'
 import { API_PATH, DATA_BANK } from '../../core.mod/proxy-service/proxy-service';
 import { Link } from 'react-router-dom';
+import styles  from './all-diplomas.module.scss'
 
 export default class AllDiplomas extends React.Component<any> {
     public state: { [key: string]: string } = {};
@@ -15,12 +16,12 @@ export default class AllDiplomas extends React.Component<any> {
                         return (
                             <div className='col s12 m4' key={diploma.id}>
                                 <div className='card'>
-                                    <div className='card-image'>
-                                        <img src={DATA_BANK + API_PATH.IMAGE + diploma.imageUrl} alt={diploma.imageUrl}/>
+                                    <div className={ 'card-image'}>
+                                        <img className={ styles.image} src={DATA_BANK + API_PATH.IMAGE + diploma.imageUrl} alt={diploma.imageUrl}/>
                                         <span className='card-title'>{diploma.title}</span>
                                         <Link to={'/edit-diploma/' + diploma.diplomaName}
                                               className='btn-floating halfway-fab waves-effect waves-light red'><i
-                                            className='material-icons'>add</i></Link>
+                                            className='material-icons'>folder_open</i></Link>
                                     </div>
                                     <div className='card-content'>
                                         <p>{diploma.shortDescription}</p>

@@ -21,13 +21,19 @@ export default abstract class AbstractCourseDetails extends Component {
         previewImage: null,
         imageUrl: null,
         saveButtonLabel: null,
-        pageTitle: null
+        pageTitle: null,
+        isDeletable: false,
     };
     public instance: any;
     /**
      * saveCourse will save newCourse or update existing course
      */
     public abstract saveCourse(): void;
+
+    /**
+     * delete Course and navigate to all courses
+     */
+    public abstract deleteCourse(): void;
 
     componentDidMount(): void {
         M.updateTextFields();
@@ -214,10 +220,13 @@ export default abstract class AbstractCourseDetails extends Component {
                 </div>
             </div>;
         }
+        const deleteElement = this.state.isDeletable &&
+            <a onClick={()=> this.deleteCourse()} className={'btn-floating btn-large waves-effect waves-light right'}><i className='material-icons'>delete_forever</i></a>;
         return (
             <div className='container'>
                 <div className='row'>
                     <h5 className='title'>{this.state.pageTitle}</h5>
+                    {deleteElement}
                 </div>
                 <div className="row">
                     <Input config={this.state.formControls.courseName}

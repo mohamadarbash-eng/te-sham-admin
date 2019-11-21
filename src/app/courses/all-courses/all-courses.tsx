@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios'
 import { API_PATH, DATA_BANK } from '../../core.mod/proxy-service/proxy-service';
 import { Link } from 'react-router-dom';
+import styles from './all-courses.module.scss';
 
 export default class AllCourses extends React.Component<any> {
     public state: { [key: string]: string } = {};
@@ -16,11 +17,11 @@ export default class AllCourses extends React.Component<any> {
                             <div className='col s12 m4' key={course.id}>
                                 <div className='card'>
                                     <div className='card-image'>
-                                        <img src={DATA_BANK + API_PATH.IMAGE + course.imageUrl} alt={course.imageAlt}/>
+                                        <img className={ styles.image} src={DATA_BANK + API_PATH.IMAGE + course.imageUrl} alt={course.imageAlt}/>
                                         <span className='card-title'>{course.title}</span>
                                         <Link to={'/edit-course/' + course.courseName}
                                               className='btn-floating halfway-fab waves-effect waves-light red'><i
-                                            className='material-icons'>add</i></Link>
+                                            className='material-icons'>folder_open</i></Link>
                                     </div>
                                     <div className='card-content'>
                                         <p>{course.shortDescription}</p>

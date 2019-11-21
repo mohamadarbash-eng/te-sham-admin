@@ -8,37 +8,45 @@ declare const M: any;
 export default class EditCourse extends AbstractCourseDetails {
     public courseID: string = '';
 
+
     componentDidMount(): void {
         this.setState({
             saveButtonLabel: 'Update',
-            pageTitle: 'Edit Course'
+            pageTitle: 'Edit Course',
+            isDeletable: true
         });
         Axios.get( API_PATH.COURSE_DETAILS + (this.props as any).match.params.courseName).then(({data}) => {
-            this.courseID = data.id;
-            // TODO fix it
-            let formControls = cloneDeep(this.state.formControls);
-            for (const item in data) {
-                if (!!data[item] && typeof data[item] === 'object') {
-                    const subCourseItem = cloneDeep(data[item]);
-                    formControls = {
-                        ...formControls,
-                        [item]: {
-                            ...this.spreadData(formControls[item], subCourseItem)
+            if (data) {
+                this.courseID = data.id;
+                // TODO fix it
+                let formControls = cloneDeep(this.state.formControls);
+                for (const item in data) {
+                    if (!!data[item] && typeof data[item] === 'object') {
+                        const subCourseItem = cloneDeep(data[item]);
+                        formControls = {
+                            ...formControls,
+                            [item]: {
+                                ...this.spreadData(formControls[item], subCourseItem)
+                            }
                         }
-                    }
-                } else {
-                    for (const control in formControls) {
-                        if (formControls[item] && formControls[item].value !== undefined && control) {
-                            formControls[item].value = data[item];
+                    } else {
+                        for (const control in formControls) {
+                            if (formControls[item] && formControls[item].value !== undefined && control) {
+                                formControls[item].value = data[item];
+                            }
                         }
                     }
                 }
+                this.setState({
+                    formControls: formControls
+                })
             }
-            this.setState({
-                formControls: formControls
-            })
+            else {
+                console.log('fsdfd')
+            }
+            }).catch((e: Error) => {
+            (this.props as any).history.push('/error-page')
         });
-
     }
 
     componentDidUpdate(prevProps: Readonly<any>, prevState: Readonly<{}>, snapshot?: any): void {
@@ -57,9 +65,17 @@ export default class EditCourse extends AbstractCourseDetails {
     public saveCourse(): void {
         if (this.courseID) {
             Axios.put('/api/course/' + this.courseID, this.mapCourseData()).then((data) => {
-                // TODO handel the response / or error
+                (this.props as any).history.push('/all-courses')
             })
         }
     }
+
+    public deleteCourse(): void {
+        if (this.courseID) {
+            Axios.delete('/api/course/' + this.courseID).then(() => {
+                (this.props as any).history.push('/all-courses')
+            })
+        }
+}
 
 }
