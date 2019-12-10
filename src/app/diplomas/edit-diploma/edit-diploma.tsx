@@ -14,6 +14,7 @@ export default class EditDiploma extends AbstractDiplomaDetails {
             saveButtonLabel: 'Update',
             pageTitle: 'Edit Diploma'
         });
+        console.log(this.props);
         Axios.get<DiplomaInterface>(API_PATH.EDIT_DIPLOMA + (this.props as any).match.params.diplomaName).then(({data}) => {
             this.diplomaID = data.id;
             console.log(data);
@@ -30,7 +31,7 @@ export default class EditDiploma extends AbstractDiplomaDetails {
                     }
                 } else {
                     for (const control in formControls) {
-                        if (formControls[item] && formControls[item].value !== undefined) {
+                        if (control && formControls[item] && formControls[item].value !== undefined) {
                             formControls[item].value = data[item];
                         }
                     }

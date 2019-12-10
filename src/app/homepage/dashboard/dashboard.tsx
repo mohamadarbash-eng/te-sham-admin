@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 declare const M: any;
 
-export class Dashboard extends React.Component<any> {
+export default class Dashboard extends React.Component<any> {
     public state: any;
 
     componentDidMount(): void {
@@ -14,7 +14,7 @@ export class Dashboard extends React.Component<any> {
     }
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
-        return (<div>
+        return (<React.Fragment>
                 <nav className={Styles.teAppMain}>
                     <div className='nav-wrapper'>
                         <Link to='/' className='brand-logo'>Logo</Link>
@@ -23,18 +23,18 @@ export class Dashboard extends React.Component<any> {
                         </ul>
                     </div>
                 </nav>
-                <ul id='slide-out' className='sidenav sidenav-fixed'>
-                    <li>
-                        <div className='user-view'>
-                            <div className='background'>
+                    <ul id='slide-out' className='sidenav sidenav-fixed'>
+                        <li>
+                            <div className='user-view'>
+                                <div className='background'>
+                                </div>
+                                <a href='#email'><span className='white-text email'>jdandturk@gmail.com</span></a>
                             </div>
-                            <a href='#email'><span className='white-text email'>jdandturk@gmail.com</span></a>
-                        </div>
-                    </li>
-                    <li><a href='#!'><i className='material-icons'>cloud</i>First Link With Icon</a></li>
-                    <li>
-                        <div className='divider'></div>
-                    </li>
+                        </li>
+                        <li><a href='#!'><i className='material-icons'>cloud</i>First Link With Icon</a></li>
+                        <li>
+                            <div className='divider'></div>
+                        </li>
                     <li><Link to='/new-course'>New Course</Link></li>
                     <li><Link to='/all-courses'>All Courses</Link></li>
                     <li><Link to='/new-diploma'>New Diploma</Link></li>
@@ -43,7 +43,7 @@ export class Dashboard extends React.Component<any> {
                 <div className={Styles.teAppMain}>
                     <Main></Main>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }

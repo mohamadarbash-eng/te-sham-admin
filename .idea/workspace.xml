@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41a85f6-7a99-4d13-87aa-dacf8fddd8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/core.mod/error-handler/error-page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/courses/all-courses/all-courses.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/diplomas/all-diplomas/all-diplomas.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admins/login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/homepage/main/main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitbucket-pipelines.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/courses/abstract-course-details.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/abstract-course-details.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/all-courses/all-courses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/all-courses/all-courses.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/edit-course/edit-course.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/edit-course/edit-course.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/new-course/new-course.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/new-course/new-course.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/diplomas/all-diplomas/all-diplomas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/diplomas/all-diplomas/all-diplomas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/main/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/main/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/homepage/dashboard/dashboard.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/homepage/dashboard/dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/diplomas/edit-diploma/edit-diploma.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/diplomas/edit-diploma/edit-diploma.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/homepage/homepage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/main/main.tsx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,19 +46,19 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/.circleci" />
-      <recent name="D:\my-library\te-sham-academy\tesham-server\routes\course" />
-      <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\frame.pck" />
-      <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\core.mod" />
-      <recent name="D:\my-library\te-sham-academy\tesham-server" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\diplomas.pck\details-diplom.mod" />
       <recent name="D:\my-library\te-sham-academy\tesham-server\models" />
       <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\courses.pck\details-course.mod" />
       <recent name="D:\my-library\te-sham-academy\tesham-server\routes\diploma" />
       <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\core.mod\interfaces" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/homepage" />
+      <recent name="$PROJECT_DIR$/src/app/dashboard" />
+      <recent name="$PROJECT_DIR$/.circleci" />
+      <recent name="D:\my-library\te-sham-academy\tesham-server\routes\course" />
+      <recent name="D:\my-library\te-sham-academy\tesham-client\src\app\frame.pck" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -193,6 +189,11 @@
       <workItem from="1573994910798" duration="692000" />
       <workItem from="1574279039744" duration="2047000" />
       <workItem from="1574283249280" duration="372000" />
+      <workItem from="1574370170140" duration="1166000" />
+      <workItem from="1574519524993" duration="5746000" />
+      <workItem from="1574975792788" duration="127000" />
+      <workItem from="1574976755595" duration="2316000" />
+      <workItem from="1575654315275" duration="15877000" />
     </task>
     <servers />
   </component>

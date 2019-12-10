@@ -221,7 +221,7 @@ export default abstract class AbstractCourseDetails extends Component {
             </div>;
         }
         const deleteElement = this.state.isDeletable &&
-            <a onClick={()=> this.deleteCourse()} className={'btn-floating btn-large waves-effect waves-light right'}><i className='material-icons'>delete_forever</i></a>;
+            <button onClick={()=> this.deleteCourse()} className={'btn-floating btn-large waves-effect waves-light right'}><i className='material-icons'>delete_forever</i></button>;
         return (
             <div className='container'>
                 <div className='row'>
