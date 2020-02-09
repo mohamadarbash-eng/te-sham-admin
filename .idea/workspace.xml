@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41a85f6-7a99-4d13-87aa-dacf8fddd8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/admins/login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/homepage/main/main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/courses/abstract-course-details.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/courses/abstract-course-details.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/homepage/dashboard/dashboard.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/homepage/dashboard/dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/diplomas/edit-diploma/edit-diploma.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/diplomas/edit-diploma/edit-diploma.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/main/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/homepage/homepage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/main/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -194,6 +187,12 @@
       <workItem from="1574975792788" duration="127000" />
       <workItem from="1574976755595" duration="2316000" />
       <workItem from="1575654315275" duration="15877000" />
+      <workItem from="1576011907933" duration="758000" />
+      <workItem from="1576837141087" duration="585000" />
+      <workItem from="1576960501142" duration="678000" />
+      <workItem from="1578859212545" duration="368000" />
+      <workItem from="1580588653114" duration="753000" />
+      <workItem from="1581203922728" duration="1095000" />
     </task>
     <servers />
   </component>
